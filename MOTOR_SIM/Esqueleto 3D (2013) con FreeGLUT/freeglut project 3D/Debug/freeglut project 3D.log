@@ -1,0 +1,22 @@
+﻿Build started 20/10/2017 9:35:57.
+     1>Project "C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\hlocal\sim_motor\practica1 ig\practica1 ig\practica1 ig\esqueleto 3d (2013) con freeglut\freeglut project 3d\main.cpp(102): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         Debug\main.obj
+         Debug\Malla.obj
+         Debug\ObjetoCompuesto.obj
+         Debug\ObjetoCuadrico.obj
+         Debug\ObjetosCuadricos.obj
+         Debug\ObjetosMalla.obj
+         Debug\PuntoVector3D.obj
+         Debug\VerticeNormal.obj
+         freeglut project 3D.vcxproj -> C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
+     1>Done Building Project "C:\hlocal\SIM_MOTOR\Practica1 IG\Practica1 IG\Practica1 IG\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.09
