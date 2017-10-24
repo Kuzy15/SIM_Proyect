@@ -2,6 +2,7 @@
 
 #include "escena.h"
 #include <iostream>
+#include "PeMundo.h"
 using namespace std;
 
 // Freeglut parameters
@@ -11,6 +12,7 @@ using namespace std;
 
 //Escena
 escena escene;
+PeMundo* p;
 
 // Viewport size
 int WIDTH= 500, HEIGHT= 500;
@@ -33,6 +35,8 @@ void buildSceneObjects() {
     angY=0.0f;
     angZ=0.0f;	
 
+	p = new PeMundo();
+	
 	
 
 }
@@ -103,7 +107,7 @@ void display(void) {
 		// Drawing the scene	 		 
 		glColor3f(0.2, 1.0, 1.0);
 		//glutSolidSphere(6, 50, 60); //Sphere: radius=6, meridians=50, parallels=60
-		
+		p->dibuja();
 		//gluPartialDisk(q, 2, 20, 20, 10, 60, 90);
 		
 		//gluSphere(q,6, 20, 20);

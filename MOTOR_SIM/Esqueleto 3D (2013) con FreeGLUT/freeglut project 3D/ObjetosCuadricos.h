@@ -22,7 +22,7 @@ class Esfera :
 	public ObjetoCuadrico{
 public:
 
-	Esfera(GLfloat radio, int slices, int stacks): radio_(radio), slices_(slices), stacks_(stacks){};
+	Esfera(GLfloat radio, int slices = 10, int stacks = 10): radio_(radio), slices_(slices), stacks_(stacks){};
 	virtual ~Esfera(){};
 	virtual void dibuja();
 

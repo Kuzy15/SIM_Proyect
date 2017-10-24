@@ -42,6 +42,15 @@
     <ClCompile Include="ObjetosMalla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PeMundo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeSistemaParticulas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeParticula.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -75,6 +84,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ObjetosMalla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ccVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeMundo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeSistemaParticulas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeParticula.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

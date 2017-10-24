@@ -73,11 +73,15 @@
     <ClCompile Include="ObjetoCuadrico.cpp" />
     <ClCompile Include="ObjetosCuadricos.cpp" />
     <ClCompile Include="ObjetosMalla.cpp" />
+    <ClCompile Include="PeMundo.cpp" />
+    <ClCompile Include="PeParticula.cpp" />
+    <ClCompile Include="PeSistemaParticulas.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cara.h" />
+    <ClInclude Include="ccVector.h" />
     <ClInclude Include="escena.h" />
     <ClInclude Include="Malla.h" />
     <ClInclude Include="Objeto3D.h" />
@@ -85,6 +89,9 @@
     <ClInclude Include="ObjetoCuadrico.h" />
     <ClInclude Include="ObjetosCuadricos.h" />
     <ClInclude Include="ObjetosMalla.h" />
+    <ClInclude Include="PeMundo.h" />
+    <ClInclude Include="PeParticula.h" />
+    <ClInclude Include="PeSistemaParticulas.h" />
     <ClInclude Include="PuntoVector3D.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="VerticeNormal.h" />
