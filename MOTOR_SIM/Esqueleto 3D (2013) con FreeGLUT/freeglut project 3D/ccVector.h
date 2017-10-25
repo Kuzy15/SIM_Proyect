@@ -27,6 +27,7 @@ extern "C"
 #include <math.h>
 #include <string.h>
 
+
 #ifdef _DEBUG
 #include <assert.h>
 #endif
@@ -36,6 +37,7 @@ extern "C"
 #define inline __inline
 #endif
 #endif
+
 
 // Concatenation utility
 
@@ -79,6 +81,7 @@ typedef float ccvType;
 #define CCV_FUNC_VEC_MIX(dim)             CAT2(CCV_VEC_TYPENAME(dim), Mix)
 #define CCV_FUNC_VEC_NEW(dim)             CAT2(CCV_VEC_TYPENAME(dim), New)
 #define CCV_FUNC_VEC_EQUAL(dim)           CAT2(CCV_VEC_TYPENAME(dim), Equal)
+#define CCV_FUNC_VEC_DIVIDE(dim)          CAT2(CCV_VEC_TYPENAME(dim), Divide)
 
 #define CCV_FUNC_QUAT_IDENTITY            CAT2(CCV_QUAT_TYPENAME, Identity)
 #define CCV_FUNC_QUAT_ROTATE              CAT2(CCV_QUAT_TYPENAME, Rotate)
@@ -140,6 +143,14 @@ typedef float ccvType;
 		return v; \
 	}
 
+/*#define CCV_DEFINE_VEC_PRINT(dim) \
+	static int CCV_FUNC_VEC_PRINT(dim)(void) { \
+		CCV_VEC_TYPENAME(dim) r; \
+		for(i = 0; i < dim; ++i) \
+			std::cout << r.v[i]; \
+		return 1;
+	}*/
+
 #define CCV_DEFINE_VEC_NEGATE(dim) \
 	static inline CCV_VEC_TYPENAME(dim) CCV_FUNC_VEC_NEGATE(dim)(const CCV_VEC_TYPENAME(dim) v) { \
 		CCV_VEC_TYPENAME(dim) r; \
@@ -180,6 +191,13 @@ typedef float ccvType;
 		unsigned int i; \
 		for(i = 0; i < dim; ++i) \
 			v.v[i] *= n; \
+		return v; \
+	}
+#define CCV_DEFINE_VEC_DIVIDE(dim) \
+	static inline CCV_VEC_TYPENAME(dim) CCV_FUNC_VEC_DIVIDE(dim)(CCV_VEC_TYPENAME(dim) v, const ccvType n) { \
+		unsigned int i; \
+		for(i = 0; i < dim; ++i) \
+			v.v[i] /= n; \
 		return v; \
 	}
 
@@ -361,7 +379,8 @@ typedef float ccvType;
 	CCV_DEFINE_VEC_NORMALIZE(dim) \
 	CCV_DEFINE_VEC_REFLECT(dim) \
 	CCV_DEFINE_VEC_MIX(dim) \
-	CCV_DEFINE_VEC_EQUAL(dim)
+	CCV_DEFINE_VEC_EQUAL(dim) \
+	CCV_DEFINE_VEC_DIVIDE(dim)
 
 #define CCV_DEFINE_MAT(dim) \
 	CCV_DEFINE_VEC_TYPE(dim) \

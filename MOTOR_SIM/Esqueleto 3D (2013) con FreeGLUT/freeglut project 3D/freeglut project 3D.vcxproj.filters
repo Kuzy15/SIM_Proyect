@@ -51,6 +51,18 @@
     <ClCompile Include="PeParticula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PeFuerza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeSPExplosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeSimulador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeSimuladorEuler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -96,6 +108,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PeParticula.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeFuerza.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeSPExplosion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeSimulador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeSimuladorEuler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

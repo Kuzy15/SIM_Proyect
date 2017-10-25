@@ -73,9 +73,13 @@
     <ClCompile Include="ObjetoCuadrico.cpp" />
     <ClCompile Include="ObjetosCuadricos.cpp" />
     <ClCompile Include="ObjetosMalla.cpp" />
+    <ClCompile Include="PeFuerza.cpp" />
     <ClCompile Include="PeMundo.cpp" />
     <ClCompile Include="PeParticula.cpp" />
+    <ClCompile Include="PeSimulador.cpp" />
+    <ClCompile Include="PeSimuladorEuler.cpp" />
     <ClCompile Include="PeSistemaParticulas.cpp" />
+    <ClCompile Include="PeSPExplosion.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
@@ -89,9 +93,13 @@
     <ClInclude Include="ObjetoCuadrico.h" />
     <ClInclude Include="ObjetosCuadricos.h" />
     <ClInclude Include="ObjetosMalla.h" />
+    <ClInclude Include="PeFuerza.h" />
     <ClInclude Include="PeMundo.h" />
     <ClInclude Include="PeParticula.h" />
+    <ClInclude Include="PeSimulador.h" />
+    <ClInclude Include="PeSimuladorEuler.h" />
     <ClInclude Include="PeSistemaParticulas.h" />
+    <ClInclude Include="PeSPExplosion.h" />
     <ClInclude Include="PuntoVector3D.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="VerticeNormal.h" />

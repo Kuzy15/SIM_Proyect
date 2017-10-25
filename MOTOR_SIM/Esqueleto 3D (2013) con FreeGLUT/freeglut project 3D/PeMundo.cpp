@@ -3,15 +3,40 @@
 
 PeMundo::PeMundo()
 {
-	sistemasParticulas_.push_back(new PeSistemaParticulas());
+	
+	vec3 origen;
+	origen.x = 1; origen.y = 0; origen.z = 1;
+	sistemasParticulas_.push_back(new PeSPExplosion(origen,1,1000.0, 0.47));
+	vec3 g; g.x = 0; g.y = -9.8; g.z = 0;
+	setGravedad(g);
+	sistemasParticulas_.front()->addFuerza(gravedad_);
 }
 
 
 PeMundo::~PeMundo()
 {
+	for (auto w : sistemasParticulas_){
+		delete w;
+		w = nullptr;
+	}
+}
+
+void PeMundo::simula(){
+
+	for (auto w : sistemasParticulas_){
+		for (auto p : w->getParticulas()){
+			w->SimulaPasoParticula(p, 0.167);
+			}
+	}
+		
+
 }
 
 void PeMundo::dibuja(){
 
-	sistemasParticulas_.front()->dibuja();
+	for (auto w : sistemasParticulas_){
+		for (auto p : w->getParticulas()){
+			p->dibuja();
+		}
+	}
 }

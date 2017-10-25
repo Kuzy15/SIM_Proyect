@@ -3,7 +3,13 @@
 #include "escena.h"
 #include <iostream>
 #include "PeMundo.h"
-using namespace std;
+#include <chrono>
+#include <time.h>
+#include <cstdint>
+
+using namespace std::chrono;
+
+
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -11,7 +17,7 @@ using namespace std;
 
 
 //Escena
-escena escene;
+
 PeMundo* p;
 
 // Viewport size
@@ -27,6 +33,14 @@ GLdouble upX=0, upY=1, upZ=0;
 
 // Scene variables
 GLfloat angX, angY, angZ; 
+
+//BUCLE PRINCIPAL
+double now = glutGet(GLUT_ELAPSED_TIME);
+double lastFrame = glutGet(GLUT_ELAPSED_TIME);
+const time_t FPS = 1 / 60; 
+void loop();
+
+
 
 //OPENGL ----------------------------------------------------------------------------------------------------
 
@@ -107,13 +121,13 @@ void display(void) {
 		// Drawing the scene	 		 
 		glColor3f(0.2, 1.0, 1.0);
 		//glutSolidSphere(6, 50, 60); //Sphere: radius=6, meridians=50, parallels=60
+		
 		p->dibuja();
 		//gluPartialDisk(q, 2, 20, 20, 10, 60, 90);
 		
 		//gluSphere(q,6, 20, 20);
 
-		escene.dibuja();
-
+		
 	glPopMatrix();
  
 	glFlush();
@@ -155,6 +169,7 @@ void key(unsigned char key, int x, int y){
 			//continue_in_main_loop = false; // (**)
 			//Freeglut's sentence for stopping glut's main loop (*)
 			glutLeaveMainLoop (); 
+			
 			break;		 
 		case 'a': angX=angX+5; break;
 		case 'z': angX=angX-5; break; 
@@ -190,6 +205,7 @@ int main(int argc, char *argv[]){
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(key);
 	glutDisplayFunc(display);
+	glutIdleFunc(loop);
 
 	// OpenGL basic setting
 	initGL();
@@ -201,9 +217,13 @@ int main(int argc, char *argv[]){
 	// using the following freeglut's setting (*)
 	glutSetOption (GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION) ;
     
+	now = glutGet(GLUT_ELAPSED_TIME);
+	lastFrame = glutGet(GLUT_ELAPSED_TIME);
+
 	// Classic glut's main loop can be stopped in freeglut using (*)
 	glutMainLoop(); 
-  
+	
+	
 	// We would never reach this point using classic glut
 	system("PAUSE"); 
    
@@ -211,3 +231,19 @@ int main(int argc, char *argv[]){
 }
 
 //MOTOR FÍSICA----------------------------------------------------------------------------------------------
+void loop(){
+	
+	
+	now = glutGet(GLUT_ELAPSED_TIME);
+	double delta = now - lastFrame;
+	lastFrame = now;
+
+	if (delta < 16.67)
+	{
+		Sleep(16.67 - delta);
+	}
+
+	p->simula();
+	
+	glutPostRedisplay();
+}

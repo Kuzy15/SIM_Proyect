@@ -1,13 +1,9 @@
 #include "PeSistemaParticulas.h"
 
 
-PeSistemaParticulas::PeSistemaParticulas()
+PeSistemaParticulas::PeSistemaParticulas(vec3 origen, int maxParticulas, float vida, float kvd) :origen_(origen), maxParticulas_(maxParticulas), vida_(vida), Kvd_(kvd)
 {
-	vec3 pos;
-	pos.x = 1;
-	pos.y = 1;
-	pos.z = 1;
-	particulas_.push_back(new PeParticula(2, 2, pos, pos));
+	
 }
 
 
