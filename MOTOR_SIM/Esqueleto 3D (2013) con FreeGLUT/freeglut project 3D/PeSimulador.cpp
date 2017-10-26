@@ -11,6 +11,7 @@ PeSimulador::PeSimulador(PeMundo* pMundo)
 	// calculate initial bounding volume positions
 	/*CalculateVertices(0);
 	CalculateVertices(1);*/
+	
 }
 
 

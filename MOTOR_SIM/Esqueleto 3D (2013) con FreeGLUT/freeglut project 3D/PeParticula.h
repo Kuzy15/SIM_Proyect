@@ -3,7 +3,11 @@
 //OpenGL siempre antes que el ccVector
 #include "ObjetosCuadricos.h"
 #include "ccVector.h"
-
+struct color3f{
+	GLfloat r;
+	GLfloat g;
+	GLfloat b;
+};
 class PeParticula
 {
 
@@ -17,12 +21,16 @@ public:
 	vec3 aceleracion_;
 	float vidaRes_;
 	float tam_;
-	vec3 color_;
+	bool activo_;
+	bool coheteExplota_;
 
 	GLUquadric* render_;
+	GLfloat sec_;
+	
+	color3f color_;
 
 public:
-	PeParticula(float tam, float masa, float vida, vec3 pos, vec3 color);
+	PeParticula(float tam, float masa, float vida, vec3 pos, color3f color);
 	virtual ~PeParticula();
 
 	void dibuja();
@@ -40,7 +48,7 @@ public:
 	inline void AddFuerza(vec3 f){ fuerzas_ = vec3Add(fuerzas_, f);};
 	inline float GetVida(){ return vidaRes_; };
 	inline float GetTam(){ return tam_; };
-	inline vec3 GetColor(){ return color_; };
+	inline color3f GetColor(){ return color_; };
 	
 };
 

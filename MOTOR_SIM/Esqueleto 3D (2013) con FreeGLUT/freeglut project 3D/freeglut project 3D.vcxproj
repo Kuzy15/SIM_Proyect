@@ -80,6 +80,7 @@
     <ClCompile Include="PeSimuladorEuler.cpp" />
     <ClCompile Include="PeSistemaParticulas.cpp" />
     <ClCompile Include="PeSPExplosion.cpp" />
+    <ClCompile Include="PeSPHumo.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
@@ -100,6 +101,7 @@
     <ClInclude Include="PeSimuladorEuler.h" />
     <ClInclude Include="PeSistemaParticulas.h" />
     <ClInclude Include="PeSPExplosion.h" />
+    <ClInclude Include="PeSPHumo.h" />
     <ClInclude Include="PuntoVector3D.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="VerticeNormal.h" />

@@ -39,8 +39,9 @@ GLdouble upX=0, upY=1, upZ=0;
 GLfloat angX, angY, angZ; 
 
 //BUCLE PRINCIPAL
-double contSeg = glutGet(GLUT_ELAPSED_TIME);
-double lastFrame = glutGet(GLUT_ELAPSED_TIME);
+double contSeg = 0;
+bool e = true;//escena explosion true
+
 const float FPS = 1 / 60; 
 void loop();
 
@@ -125,8 +126,9 @@ void display(void) {
 		// Drawing the scene	 		 
 		glColor3f(0.2, 1.0, 1.0);
 		//glutSolidSphere(6, 50, 60); //Sphere: radius=6, meridians=50, parallels=60
-		
 		p->dibuja();
+		
+
 		//gluPartialDisk(q, 2, 20, 20, 10, 60, 90);
 		
 		//gluSphere(q,6, 20, 20);
@@ -136,6 +138,9 @@ void display(void) {
  
 	glFlush();
 	glutSwapBuffers();
+
+	glutPostRedisplay();
+
 }
 
 
@@ -181,7 +186,9 @@ void key(unsigned char key, int x, int y){
 		case 's': angY=angY+5; break;
 		case 'x': angY=angY-5; break;
 		case 'd': angZ=angZ+5; break;
-		case 'c': angZ=angZ-5; break;  		 
+		case 'c': angZ=angZ-5; break;  	
+		case 'f': 	
+			break;
 		default:
 			need_redisplay = false;
 			break;
@@ -222,40 +229,27 @@ int main(int argc, char *argv[]){
 	// using the following freeglut's setting (*)
 	glutSetOption (GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION) ;
     
-	contSeg = glutGet(GLUT_ELAPSED_TIME);
-	lastFrame = glutGet(GLUT_ELAPSED_TIME);
-	tPframe = glutGet(GLUT_ELAPSED_TIME);
+
 
 	// Classic glut's main loop can be stopped in freeglut using (*)
 
-	double delta = 0;
+	//double delta = 0;
 
-	while (!stop){
-		delta = glutGet(GLUT_ELAPSED_TIME) - contSeg;
-		contSeg = glutGet(GLUT_ELAPSED_TIME);
-		acum += delta;
+	/*while (!stop){
+		delta = glutGet(GLUT_ELAPSED_TIME);
 		
-
-		while(acum > (0.016 * 1000))
+		if(lastFrame + frec <= delta)
 		{
 			p->simula();
-			acum -= (0.016 * 1000);
-			frames++;
-
-			if (frames == 60){
-				tiempo = glutGet(GLUT_ELAPSED_TIME) - tPframe;
-				std::cout << tiempo << endl;
-				tPframe = glutGet(GLUT_ELAPSED_TIME);
-				frames = 0;
-			}
+			lastFrame = delta;
+			
 		}
 
 		
-		glutMainLoopEvent();
 
 		
-		glutPostRedisplay();
-	}
+	}*/
+	glutMainLoop();
 
 	// We would never reach this point using classic glut
 	system("PAUSE"); 

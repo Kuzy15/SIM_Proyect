@@ -11,7 +11,10 @@ private:
 	vec3 gravedad_; //Vector de la gravedad.
 	list<PeSistemaParticulas*> sistemasParticulas_; //Arrays de sistemas de partículas
 	list<PeFuerza*> fuerzas_;
-
+	double lastFrame = 0;
+	GLfloat frec = 10;
+	PeSistemaParticulas* explo;
+	PeSistemaParticulas* humito;
 	
 	/*aBodies;*/
 
