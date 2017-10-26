@@ -82,6 +82,7 @@ typedef float ccvType;
 #define CCV_FUNC_VEC_NEW(dim)             CAT2(CCV_VEC_TYPENAME(dim), New)
 #define CCV_FUNC_VEC_EQUAL(dim)           CAT2(CCV_VEC_TYPENAME(dim), Equal)
 #define CCV_FUNC_VEC_DIVIDE(dim)          CAT2(CCV_VEC_TYPENAME(dim), Divide)
+#define CCV_FUNC_VEC_DIVIDE_INT(dim)      CAT2(CCV_VEC_TYPENAME(dim), DivideInt)
 
 #define CCV_FUNC_QUAT_IDENTITY            CAT2(CCV_QUAT_TYPENAME, Identity)
 #define CCV_FUNC_QUAT_ROTATE              CAT2(CCV_QUAT_TYPENAME, Rotate)
@@ -200,6 +201,14 @@ typedef float ccvType;
 			v.v[i] /= n; \
 		return v; \
 	}
+
+#define CCV_DEFINE_VEC_DIVIDE_INT(dim) \
+	static inline CCV_VEC_TYPENAME(dim) CCV_FUNC_VEC_DIVIDE_INT(dim)(const ccvType n,CCV_VEC_TYPENAME(dim) v) { \
+		unsigned int i; \
+		for(i = 0; i < dim; ++i) \
+			v.v[i] = n / v.v[i]; \
+		return v; \
+		}
 
 #define CCV_DEFINE_VEC_DOTPRODUCT(dim) \
 	static inline ccvType CCV_FUNC_VEC_DOTPRODUCT(dim)(const CCV_VEC_TYPENAME(dim) a, const CCV_VEC_TYPENAME(dim) b) { \
@@ -380,7 +389,8 @@ typedef float ccvType;
 	CCV_DEFINE_VEC_REFLECT(dim) \
 	CCV_DEFINE_VEC_MIX(dim) \
 	CCV_DEFINE_VEC_EQUAL(dim) \
-	CCV_DEFINE_VEC_DIVIDE(dim)
+	CCV_DEFINE_VEC_DIVIDE(dim) \
+	CCV_DEFINE_VEC_DIVIDE_INT(dim)
 
 #define CCV_DEFINE_MAT(dim) \
 	CCV_DEFINE_VEC_TYPE(dim) \

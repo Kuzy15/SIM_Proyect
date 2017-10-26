@@ -3,8 +3,7 @@
 
 PeParticula::PeParticula(float tam, float masa, float vida, vec3 pos, vec3 color) : tam_(tam), masa_(masa), pos_(pos), color_(color), vidaRes_(vida)
 {
-	render_ = new Esfera(tam_);
-	render_->getMatriz()->traslada(pos_.x, pos_.y, pos_.z);
+	render_ = gluNewQuadric();
 
 	vec3 ini;
 	ini.x = 0; ini.y = 0; ini.z = 0;
@@ -12,10 +11,6 @@ PeParticula::PeParticula(float tam, float masa, float vida, vec3 pos, vec3 color
 	vel_ = ini;
 	aceleracion_ = ini;
 	traslacion_ = ini;
-
-
-	
-	
 }
 
 
@@ -27,7 +22,11 @@ PeParticula::~PeParticula()
 
 void PeParticula::dibuja(){
 	//set color
-	update();
-	render_->dibuja();
+	//update();
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glTranslated(pos_.x, pos_.y, pos_.z);
+	glutSolidSphere(0.2, 10, 10);
+	glPopMatrix();
 	
 }

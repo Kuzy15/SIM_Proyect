@@ -19,7 +19,7 @@ public:
 	float tam_;
 	vec3 color_;
 
-	Objeto3D* render_;
+	GLUquadric* render_;
 
 public:
 	PeParticula(float tam, float masa, float vida, vec3 pos, vec3 color);
@@ -29,7 +29,7 @@ public:
 
 	inline void update(){
 		
-		render_->getMatriz()->traslada(traslacion_.x, traslacion_.y, traslacion_.z);
+		//render_->getMatriz()->traslada(traslacion_.x, traslacion_.y, traslacion_.z);
 	};
 
 	inline vec3 GetPos(){ return pos_; };

@@ -6,7 +6,7 @@ PeMundo::PeMundo()
 	
 	vec3 origen;
 	origen.x = 1; origen.y = 0; origen.z = 1;
-	sistemasParticulas_.push_back(new PeSPExplosion(origen,1,1000.0, 0.47));
+	sistemasParticulas_.push_back(new PeSPExplosion(origen,1000,10.0, 0));
 	vec3 g; g.x = 0; g.y = -9.8; g.z = 0;
 	setGravedad(g);
 	sistemasParticulas_.front()->addFuerza(gravedad_);
@@ -25,11 +25,9 @@ void PeMundo::simula(){
 
 	for (auto w : sistemasParticulas_){
 		for (auto p : w->getParticulas()){
-			w->SimulaPasoParticula(p, 0.167);
+			w->SimulaPasoParticula(p, 0.016);
 			}
 	}
-		
-
 }
 
 void PeMundo::dibuja(){

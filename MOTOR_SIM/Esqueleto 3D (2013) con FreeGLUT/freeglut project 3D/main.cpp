@@ -9,7 +9,11 @@
 
 using namespace std::chrono;
 
-
+int frames = 0;
+double tiempo = 0;
+double tPframe = 0;
+double acum = 0;
+bool stop = false;
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -35,9 +39,9 @@ GLdouble upX=0, upY=1, upZ=0;
 GLfloat angX, angY, angZ; 
 
 //BUCLE PRINCIPAL
-double now = glutGet(GLUT_ELAPSED_TIME);
+double contSeg = glutGet(GLUT_ELAPSED_TIME);
 double lastFrame = glutGet(GLUT_ELAPSED_TIME);
-const time_t FPS = 1 / 60; 
+const float FPS = 1 / 60; 
 void loop();
 
 
@@ -168,7 +172,8 @@ void key(unsigned char key, int x, int y){
 		case 27:  /* Escape key */
 			//continue_in_main_loop = false; // (**)
 			//Freeglut's sentence for stopping glut's main loop (*)
-			glutLeaveMainLoop (); 
+			glutLeaveMainLoop ();
+			stop = true;
 			
 			break;		 
 		case 'a': angX=angX+5; break;
@@ -205,7 +210,7 @@ int main(int argc, char *argv[]){
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(key);
 	glutDisplayFunc(display);
-	glutIdleFunc(loop);
+	//glutIdleFunc(loop);
 
 	// OpenGL basic setting
 	initGL();
@@ -217,13 +222,41 @@ int main(int argc, char *argv[]){
 	// using the following freeglut's setting (*)
 	glutSetOption (GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION) ;
     
-	now = glutGet(GLUT_ELAPSED_TIME);
+	contSeg = glutGet(GLUT_ELAPSED_TIME);
 	lastFrame = glutGet(GLUT_ELAPSED_TIME);
+	tPframe = glutGet(GLUT_ELAPSED_TIME);
 
 	// Classic glut's main loop can be stopped in freeglut using (*)
-	glutMainLoop(); 
-	
-	
+
+	double delta = 0;
+
+	while (!stop){
+		delta = glutGet(GLUT_ELAPSED_TIME) - contSeg;
+		contSeg = glutGet(GLUT_ELAPSED_TIME);
+		acum += delta;
+		
+
+		while(acum > (0.016 * 1000))
+		{
+			p->simula();
+			acum -= (0.016 * 1000);
+			frames++;
+
+			if (frames == 60){
+				tiempo = glutGet(GLUT_ELAPSED_TIME) - tPframe;
+				std::cout << tiempo << endl;
+				tPframe = glutGet(GLUT_ELAPSED_TIME);
+				frames = 0;
+			}
+		}
+
+		
+		glutMainLoopEvent();
+
+		
+		glutPostRedisplay();
+	}
+
 	// We would never reach this point using classic glut
 	system("PAUSE"); 
    
@@ -231,19 +264,7 @@ int main(int argc, char *argv[]){
 }
 
 //MOTOR FÍSICA----------------------------------------------------------------------------------------------
-void loop(){
+void loop(){}
 	
 	
-	now = glutGet(GLUT_ELAPSED_TIME);
-	double delta = now - lastFrame;
-	lastFrame = now;
-
-	if (delta < 16.67)
-	{
-		Sleep(16.67 - delta);
-	}
-
-	p->simula();
 	
-	glutPostRedisplay();
-}
