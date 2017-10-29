@@ -1,50 +1,60 @@
 #include "PeParticula.h"
-GLfloat dameRandom(GLfloat max, GLfloat min) {
-	return min + static_cast <GLfloat> (rand()) / (static_cast <GLfloat> (RAND_MAX / (max - min)));
-}
 
-PeParticula::PeParticula(float tam, float masa, float vida, vec3 pos, color3f color) : tam_(tam), masa_(masa), pos_(pos), color_(color), vidaRes_(vida), sec_(GLUT_ELAPSED_TIME)
+
+PeParticula::PeParticula(float tam, float masa, float vida, vec3 pos, color3f color, vec3 velocidad, vec3 g) :
+tam_(tam), masa_(masa), pos_(pos), color_(color), vida_(vida)
 {
-	render_ = gluNewQuadric();
-
-	vec3 ini;
-	vec3 hey;
-	vec3 g;
-	g.x = 0; g.y = -9.8; g.z = 0;
-
-	hey.x = 0; hey.y = 0; hey.z = 0;
-	ini.x = dameRandom(1.5, -1.5); ini.y = dameRandom(0, 1); ini.z = dameRandom(1.5, -1.5);
-	fuerzas_ = hey;
-	AddFuerza(g);
-	vel_ = ini;
-	aceleracion_ = hey;
-	traslacion_ = hey;
+	vidaRes_ = vida;
 	activo_ = true;
-
+	borrar_ = false;
+	sec_ = glutGet(GLUT_ELAPSED_TIME);
+	vel_ = velocidad;
+	aceleracion_.x = 0; aceleracion_.z = 0;
+	aceleracion_.y = 0;
+	FuerzaG = g;
 
 }
 
 
 PeParticula::~PeParticula()
 {
-	delete render_;
-	render_ = nullptr;
+	
 }
 
 void PeParticula::dibuja(){
-	//set color
-	
-	color_.g -= (vidaRes_/1000);
 
-	//update();
 	if (activo_){
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
-		glColor3f(color_.r, color_.g, color_.b);
+		glColor4f(color_.r, color_.g, color_.b, color_.a);
 		glTranslated(pos_.x, pos_.y, pos_.z);
-
-		glutSolidSphere(0.2, 10, 10);
+		glutSolidSphere(tam_, 5, 5);
 		glPopMatrix();
 	}
 	
 }
+
+void PeParticula::update(GLfloat deltaTime){
+
+	deltaTime -= sec_;
+	deltaTime /= 10000;
+	if (vidaRes_ <= 0 && vida_ != -1)
+	{
+		//borrar
+		activo_ = false;
+		borrar_ = true;
+	}
+
+	else
+	{
+		
+		pos_ = vec3Add(pos_, vec3Add(vec3Multiply(vel_,deltaTime), vec3Divide(vec3Multiply(aceleracion_, (deltaTime * deltaTime)), 2)));
+		vel_ = vec3Add(vel_, vec3Multiply(vec3Add(aceleracion_, FuerzaG), deltaTime));
+
+		if (vidaRes_ >= 0)
+			vidaRes_ -= deltaTime;
+
+	}
+
+}
+

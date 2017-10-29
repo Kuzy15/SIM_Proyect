@@ -63,9 +63,6 @@
     <ClCompile Include="PeSimuladorEuler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PeSPHumo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -123,9 +120,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PeSimuladorEuler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PeSPHumo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

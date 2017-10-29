@@ -1,14 +1,12 @@
 #include "PeMundo.h"
-#include "PeSPHumo.h"
-
 
 
 PeMundo::PeMundo()
 {
 	
 	vec3 origen;
-	origen.x = 1; origen.y = 0; origen.z = 1;
-	explo = new PeSPExplosion(origen,1500,100.0, 0);
+	origen.x = 5; origen.y = 5; origen.z = 0;
+	explo = new PeSPExplosion(origen, 5000, 100.0, 0);
 	sistemasParticulas_.push_back(explo);
 	
 	
@@ -37,17 +35,21 @@ void PeMundo::simula(){
 
 void PeMundo::dibuja(){
 	GLfloat delta = glutGet(GLUT_ELAPSED_TIME);
-
-	for (auto w : sistemasParticulas_){
+	explo->dibuja();
+	if (lastFrame + frec <= delta)
+	{
+		explo->update(delta);
+	}
+	/*for (auto w : sistemasParticulas_){
 		for (auto p : w->getParticulas()){
 			p->dibuja();
 
 			if (lastFrame + frec <= delta)
 			{
-				explo->SimulaPasoParticula(p, delta);
+				explo->update(delta);
 			}
 		}
 	}
-	
+	*/
 
 }

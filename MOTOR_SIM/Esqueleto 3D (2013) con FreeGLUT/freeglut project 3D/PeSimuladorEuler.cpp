@@ -11,7 +11,7 @@ PeSimuladorEuler::~PeSimuladorEuler()
 {
 }
 
-void PeSimuladorEuler::Simular(float time)
+/*void PeSimuladorEuler::Simular(float time)
 {
 	float deltaTime;
 
@@ -29,7 +29,7 @@ void PeSimuladorEuler::Simular(float time)
 		{
 			pMundo_->GetForce(i)->SimulateStepForce(time);
 			ForceAc = pMundo_->GetForce(i)->GetForce();
-		}*/
+			}*//*
 		PeFuerza* f;
 		list<PeFuerza*> fuerzas = pMundo_->getFuerzas();
 		list<PeFuerza*>::iterator it = fuerzas.begin();
@@ -42,7 +42,7 @@ void PeSimuladorEuler::Simular(float time)
 
 		//TODO: Simular a intervalos distintos las partículas y solidos
 		/*SimulateBodies(DeltaTime);
-		SimulateParticles(DeltaTime);*/
+		SimulateParticles(DeltaTime);*//*
 
 		lastTime_ += deltaTime;
 	}
@@ -61,7 +61,7 @@ void PeSimuladorEuler::SimulaParticulas(float deltaTime)
 	{
 		CParticleSpring* ps = pWorld->GetParticleSpring(i);
 		ps->ApplyForces();
-	}*/
+		}*//*
 	
 	list<PeSistemaParticulas*> sistemasParticulas = pMundo_->getSistemasParticulas();
 	list<PeSistemaParticulas*>::iterator sPIt = sistemasParticulas.begin();
@@ -84,7 +84,7 @@ void PeSimuladorEuler::SimulaParticulas(float deltaTime)
 			if (sP->SimulaPasoParticula(p, deltaTime)){
 				//si la particula sigue viva miramos si colisiona
 				/*if (collisionCheck && pCollEngine->CheckParticleCollision(p))
-					ps->ParticleCollisionEvent(p, j);*/
+				ps->ParticleCollisionEvent(p, j);*//*
 				pIt++;
 			}
 			else{
@@ -103,4 +103,4 @@ void PeSimuladorEuler::SimulaParticulas(float deltaTime)
 			sPIt++;
 		}
 	}
-}
+}*/

@@ -1,30 +1,23 @@
 #include "PeSPExplosion.h"
 #include <iostream>
 #include "PeMundo.h"
-//ES DE COLIN
-//retocar, si no, copy== true;
+
 PeSPExplosion::PeSPExplosion(vec3 origen, int maxParticulas, float vida, float kvd) :PeSistemaParticulas(origen, maxParticulas, vida, kvd)
 
 {
-		origen_.y = 0;
-		origen_.x = 0;
-		origen_.z = 0;
-		color3f c;
-		c.r = 1;
-		c.g = 1;
-		c.b = 0;
-		
-		cohete = new PeParticula(0.5, 20, 10, origen_,c );
-		
-		
-		vec3 a;
-		a.x = 0; a.y = 3.2; a.z = 0;
-		cohete->vel_ = a;
-		particulas_.push_back(cohete);
-		needExplo = true;
-		
+	vec3 g;
+	g.x = 0; g.y = -2.8 ; g.z = 0;
+	vec3 v;
+	color3f c;
+	c.a = 1; c.r = 1; c.b = 0; c.g = 0;
 
+	for (int i = 0; i < maxParticulas_; i++){
+		v = DameVectorAleatorio(dameRandom(5,-5));
 
+		PeParticula* p = new PeParticula(0.1f, 1.0f, 100.0f, origen_, c, v,g);
+		particulas_.push_back(p);
+		
+	}
 }
 
 
@@ -32,7 +25,7 @@ PeSPExplosion::~PeSPExplosion()
 {
 }
 
-bool PeSPExplosion::SimulaPasoParticula(PeParticula*p, float deltaTime){
+/*bool PeSPExplosion::SimulaPasoParticula(PeParticula*p, float deltaTime){
 
 	deltaTime -= p->sec_;
 	deltaTime /= 10000;
@@ -66,7 +59,7 @@ bool PeSPExplosion::SimulaPasoParticula(PeParticula*p, float deltaTime){
 		std::cout << p->fuerzas_.y << std::endl;
 		/*std::cout << "Velocidad: " << p->vel_.y << endl;
 		std::cout << "Posicion: "<< p->pos_.x << " " << p->pos_.y << " " << p->pos_.z << endl;
-		std::cout << "---------------" << endl;*/
+		std::cout << "---------------" << endl;
 
 		return true;
 	}
@@ -74,26 +67,16 @@ bool PeSPExplosion::SimulaPasoParticula(PeParticula*p, float deltaTime){
 }
 
 bool PeSPExplosion::SimulaPasoParticula(PeParticula*p, vec3 a, float deltaTime){ return true; }
-
+*/
 void PeSPExplosion::addFuerza(vec3 f){
 	for (auto w : particulas_)
 		w->AddFuerza(f);
 }
 
-void PeSPExplosion::creaPalmera(vec3 ignicion){
 
-	color3f col;
-	col.r = 0.92;
-	col.g = 0.61;
-	col.b = 0.03;
-	for (int i = 0; i < 100; i++){
-		origen_.x = ignicion.x;
-		origen_.y = ignicion.y;
-		origen_.z = ignicion.z;
-		
-		particulas_.push_back(new PeParticula(0.5, 20, 100, origen_, col));
+void PeSPExplosion::update(GLfloat deltaTime){
+	for (auto w : particulas_){
+		w->update(deltaTime);
+		//borrar
 	}
-
-
-
 }

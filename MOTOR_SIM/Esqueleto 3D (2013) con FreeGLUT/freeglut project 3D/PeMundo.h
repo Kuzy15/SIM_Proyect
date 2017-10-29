@@ -14,7 +14,6 @@ private:
 	double lastFrame = 0;
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
-	PeSistemaParticulas* humito;
 	
 	/*aBodies;*/
 

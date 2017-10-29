@@ -10,13 +10,13 @@ public:
 	PeSimuladorEuler(PeMundo* pMundo);
 	virtual ~PeSimuladorEuler();
 
-	virtual void Simular(float deltaTime);
+	virtual void Simular(float deltaTime){};
 	
 
 private:
 
 	vec3 ForceAc;
-	void SimulaParticulas(float deltaTime);
+	void SimulaParticulas(float deltaTime){};
 	/*void SimulateBodies(real DeltaTime);
 	void ComputeForcesBodies(int ConfigurationIndex);
 	void IntegrateBodies(real DeltaTime);*/
