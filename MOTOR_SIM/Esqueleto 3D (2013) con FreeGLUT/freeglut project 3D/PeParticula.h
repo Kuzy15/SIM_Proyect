@@ -44,6 +44,7 @@ public:
 	//inline vector_3 GetForce(){return f;};
 	inline void SetFuerza(vec3 f){ fuerzas_ = f; };
 	inline void AddFuerza(vec3 f){ fuerzas_ = vec3Add(fuerzas_, f);};
+	inline bool isAlive(){ return borrar_; };
 	inline float GetVida(){ return vidaRes_; };
 	inline float GetTam(){ return tam_; };
 	inline color3f GetColor(){ return color_; };

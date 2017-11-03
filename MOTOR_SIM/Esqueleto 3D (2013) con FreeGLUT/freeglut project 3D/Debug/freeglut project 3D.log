@@ -1,12 +1,11 @@
-﻿Compilación iniciada a las 29/10/2017 17:29:35.
-     1>Proyecto "D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 03/11/2017 10:44:19.
+     1>Project "C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeSPExplosion.cpp
-         PeSPExplosion.cpp
-     1>d:\simulacionfisica\project\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversión de 'unsigned int' a 'float'; posible pérdida de datos
-     1>d:\simulacionfisica\project\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespexplosion.cpp(9): warning C4305: '=' : truncamiento de 'double' a 'ccvType'
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeSPFuego.cpp
+         PeSPFuego.cpp
+     1>c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
          Debug\main.obj
          Debug\Malla.obj
          Debug\ObjetoCompuesto.obj
@@ -16,15 +15,14 @@
          Debug\PeFuerza.obj
          Debug\PeMundo.obj
          Debug\PeParticula.obj
-         Debug\PeSimulador.obj
-         Debug\PeSimuladorEuler.obj
          Debug\PeSistemaParticulas.obj
          Debug\PeSPExplosion.obj
+         Debug\PeSPFuego.obj
          Debug\PuntoVector3D.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "D:\SIMULACIONFISICA\project\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
+     1>Done Building Project "C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:01.18
+Time Elapsed 00:00:00.70

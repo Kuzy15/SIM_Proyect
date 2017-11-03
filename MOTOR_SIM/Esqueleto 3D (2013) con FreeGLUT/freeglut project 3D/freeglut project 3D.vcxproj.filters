@@ -57,10 +57,7 @@
     <ClCompile Include="PeSPExplosion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PeSimulador.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PeSimuladorEuler.cpp">
+    <ClCompile Include="PeSPFuego.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,10 +113,7 @@
     <ClInclude Include="PeSPExplosion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PeSimulador.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PeSimuladorEuler.h">
+    <ClInclude Include="PeSPFuego.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

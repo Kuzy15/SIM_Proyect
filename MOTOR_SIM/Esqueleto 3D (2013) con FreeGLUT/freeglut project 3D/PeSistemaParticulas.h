@@ -51,12 +51,11 @@ public:
 
 	void const addParticula(PeParticula*);
 
-	/*virtual bool SimulaPasoParticula(PeParticula*p, vec3  a, float deltaTime) = 0;
-
-	virtual bool SimulaPasoParticula(PeParticula*p, float deltaTime) = 0;*/
 	virtual void update(GLfloat deltaTime) = 0;
 
 	virtual void addFuerza(vec3 f) = 0;
+
+	//virtual bool destroy() = 0;
 
 	void dibuja();
 

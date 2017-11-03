@@ -2,6 +2,7 @@
 #define PEMUNDO_H
 
 #include "PeSPExplosion.h"
+#include "PeSPFuego.h"
 #include "PeFuerza.h"
 
 class PeMundo
@@ -14,14 +15,17 @@ private:
 	double lastFrame = 0;
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
-	
+	vec3 origen;
+
+	GLfloat delta;
+	GLfloat lastUpdate = glutGet(GLUT_ELAPSED_TIME);
+	int cont = 0;
 	/*aBodies;*/
 
 public:
 	PeMundo();
 	~PeMundo();
 
-	void simula();
 
 	const vec3 getTam(){ return tam_; };
 

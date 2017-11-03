@@ -235,20 +235,7 @@ int main(int argc, char *argv[]){
 
 	//double delta = 0;
 
-	/*while (!stop){
-		delta = glutGet(GLUT_ELAPSED_TIME);
-		
-		if(lastFrame + frec <= delta)
-		{
-			p->simula();
-			lastFrame = delta;
-			
-		}
-
-		
-
-		
-	}*/
+	
 	glutMainLoop();
 
 	// We would never reach this point using classic glut

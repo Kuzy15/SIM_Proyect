@@ -13,7 +13,6 @@ public:
 	PeFuerza();
 	virtual ~PeFuerza();
 
-	virtual void SimulaPasoFuerza(float DeltaTime) = 0;
 	virtual vec3 GetFuerza() = 0;
 
 
