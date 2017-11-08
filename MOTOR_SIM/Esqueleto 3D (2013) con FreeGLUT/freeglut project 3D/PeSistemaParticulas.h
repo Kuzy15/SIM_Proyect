@@ -55,7 +55,7 @@ public:
 
 	virtual void addFuerza(vec3 f) = 0;
 
-	//virtual bool destroy() = 0;
+	bool destroy();
 
 	void dibuja();
 

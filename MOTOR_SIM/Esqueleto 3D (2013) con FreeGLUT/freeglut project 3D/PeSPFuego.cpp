@@ -4,17 +4,15 @@
 PeSPFuego::PeSPFuego(vec3 origen, int maxParticulas, float vida, float kvd) :PeSistemaParticulas(origen, maxParticulas, vida, kvd)
 {
 
-	vec3 g;
-	g.x = 0; g.y = 5; g.z = 0;
-	vec3 v;
-	color3f c;
+	g.x = 0; g.y = 0.5; g.z = 0;
 	c.a = 1; c.r = 1; c.b = 0; c.g = 0;
 
 	for (int i = 0; i < maxParticulas_; i++){
-		v = DameVectorAleatorio(dameRandom(2, -2));
+		// fuego de angel
+		/*v = DameVectorAleatorio(dameRandom(2, -2));
 
 		PeParticula* p = new PeParticula(0.1f, 1.0f, 5.0f, origen_, c, v, g);
-		particulas_.push_back(p);
+		particulas_.push_back(p);*/
 
 	}
 }
@@ -35,10 +33,17 @@ void PeSPFuego::addFuerza(vec3 f){
 
 
 void PeSPFuego::update(GLfloat deltaTime){
+	// fuego de alex
+	
+	for (size_t i = 0; i < 20; i++)
+	{
+		v = DameVectorAleatorio(dameRandom(1, -1));
+		PeParticula* p = new PeParticula(0.1f, 1.0f, 5.0f, origen_, c, v, g);
+		particulas_.push_back(p);
+	}
+	
 
-	
 	for (auto w : particulas_){
-		w->update(deltaTime);
-	
+		w->update(deltaTime);	
 	}
 }

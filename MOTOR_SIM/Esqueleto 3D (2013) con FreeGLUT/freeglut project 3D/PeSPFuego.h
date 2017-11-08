@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PESPFUEGO
+#define PESPFUEGO
 #include "PeSistemaParticulas.h"
 class PeSPFuego :
 	public PeSistemaParticulas
@@ -9,5 +10,10 @@ public:
 
 	virtual void update(GLfloat deltaTime);
 	virtual void addFuerza(vec3 f);
+private:
+	vec3 v;
+	color3f c;
+	vec3 g;
 };
 
+#endif

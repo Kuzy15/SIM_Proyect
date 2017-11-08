@@ -24,3 +24,9 @@ void PeSistemaParticulas::dibuja(){
 		w->dibuja();
 	}
 }
+bool PeSistemaParticulas::destroy(){
+	for (auto w : particulas_){
+		if (w->GetVida() > 0) return false;
+	}
+	return true;
+}

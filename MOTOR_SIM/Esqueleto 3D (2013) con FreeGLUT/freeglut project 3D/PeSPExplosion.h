@@ -13,7 +13,6 @@ public:
 	
 	virtual void update(GLfloat deltaTime);
 	virtual void addFuerza(vec3 f);
-	//virtual void destroy();
 private:
 };
 

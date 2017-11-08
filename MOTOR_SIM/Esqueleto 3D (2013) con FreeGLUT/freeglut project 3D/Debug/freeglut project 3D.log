@@ -1,9 +1,12 @@
-﻿Build started 03/11/2017 10:44:19.
+﻿Build started 08/11/2017 9:38:58.
      1>Project "C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeSPFuego.cpp
-         PeSPFuego.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeMundo.cpp
+         PeMundo.cpp
      1>c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(21): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(32): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
          Debug\main.obj
@@ -25,4 +28,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.70
+Time Elapsed 00:00:00.84

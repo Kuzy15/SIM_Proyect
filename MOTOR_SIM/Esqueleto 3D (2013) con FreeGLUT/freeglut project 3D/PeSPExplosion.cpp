@@ -42,9 +42,3 @@ void PeSPExplosion::update(GLfloat deltaTime){
 	}
 }
 
-/*bool PeSPExplosion::destroy(){
-	for (auto w : particulas_){
-		if (w->GetVida() > 0) return false;
-	}
-	return true;
-}*/
