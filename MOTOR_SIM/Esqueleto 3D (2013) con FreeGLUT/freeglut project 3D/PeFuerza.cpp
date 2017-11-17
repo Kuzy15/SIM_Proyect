@@ -1,8 +1,9 @@
 #include "PeFuerza.h"
 
 
-PeFuerza::PeFuerza()
+PeFuerza::PeFuerza(vec3 f)
 {
+	dir_ = f;
 }
 
 

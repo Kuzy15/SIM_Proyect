@@ -3,6 +3,9 @@
 
 #include "ccVector.h"
 
+const vec3 G = { 0, -9.8, 0 };
+
+
 class PeFuerza
 {
 private:
@@ -10,10 +13,10 @@ private:
 	vec3 dir_;
 
 public:
-	PeFuerza();
+	PeFuerza(vec3 f);
 	virtual ~PeFuerza();
 
-	virtual vec3 GetFuerza() = 0;
+	//virtual vec3 GetFuerza() = 0;
 
 
 	inline vec3 GetDirectionVector(){ return dir_; };

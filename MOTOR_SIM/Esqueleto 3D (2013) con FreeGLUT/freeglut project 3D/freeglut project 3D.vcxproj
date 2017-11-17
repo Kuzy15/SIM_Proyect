@@ -76,6 +76,7 @@
     <ClCompile Include="PeFuerza.cpp" />
     <ClCompile Include="PeMundo.cpp" />
     <ClCompile Include="PeParticula.cpp" />
+    <ClCompile Include="PeRigidBody.cpp" />
     <ClCompile Include="PeSistemaParticulas.cpp" />
     <ClCompile Include="PeSPExplosion.cpp" />
     <ClCompile Include="PeSPFuego.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="PeFuerza.h" />
     <ClInclude Include="PeMundo.h" />
     <ClInclude Include="PeParticula.h" />
+    <ClInclude Include="PeRigidBody.h" />
     <ClInclude Include="PeSistemaParticulas.h" />
     <ClInclude Include="PeSPExplosion.h" />
     <ClInclude Include="PeSPFuego.h" />
