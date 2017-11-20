@@ -8,7 +8,7 @@
 class PeRigidBody
 {
 public:
-	PeRigidBody(vec3 origen, GLfloat tam);
+	PeRigidBody(vec3 origen, GLfloat tam, GLfloat mass);
 	virtual ~PeRigidBody();
 	void update(float dT);
 	void addForce(PeFuerza nF);
@@ -23,8 +23,10 @@ private:
 	vec3 _angularVel;
 	vec3 _force;
 	vec3 _torque;
-	vec3 _acceleracion;
+	vec3 _aceleracion;
 	vec3 _impulse;
+
+	GLfloat _sec;
 	struct color3f {
 		GLfloat r;
 		GLfloat g;

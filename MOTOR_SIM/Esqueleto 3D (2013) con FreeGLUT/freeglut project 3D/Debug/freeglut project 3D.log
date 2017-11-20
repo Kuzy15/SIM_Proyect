@@ -1,8 +1,6 @@
-﻿  PeMundo.cpp
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+﻿  PeRigidBody.cpp
 c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: la conversión de 'double' en 'ccvType' requiere una conversión de restricción
 c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'inicializando': truncamiento de 'double' a 'ccvType'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(22): warning C4244: 'inicializando': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(34): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\perigidbody.cpp(6): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
   freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
   freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb (Full PDB)

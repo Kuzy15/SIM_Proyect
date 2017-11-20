@@ -11,7 +11,7 @@ PeMundo::PeMundo()
 	sistemasParticulas_.push_back(explo);
 	
 
-	rb = new PeRigidBody(origen, 2);
+	rb = new PeRigidBody(origen, 2, 2);
 	
 	vec3 g; g.x = 0; g.y = 0; g.z = 0;
 	setGravedad(g);
@@ -36,5 +36,5 @@ void PeMundo::dibuja(){
 	
 	//explo->update(delta);
 	rb->dibuja();
-	//rb->update(delta);
+	rb->update(delta);
 }
