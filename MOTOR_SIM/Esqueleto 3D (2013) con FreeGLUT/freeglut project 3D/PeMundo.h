@@ -4,6 +4,7 @@
 #include "PeSPExplosion.h"
 #include "PeSPFuego.h"
 #include "PeFuerza.h"
+#include "PeRigidBody.h"
 
 class PeMundo
 {
@@ -26,7 +27,7 @@ public:
 	PeMundo();
 	~PeMundo();
 
-
+	PeRigidBody* rb;
 	const vec3 getTam(){ return tam_; };
 
 	const vec3 getGravedad(){ return gravedad_; };

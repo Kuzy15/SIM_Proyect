@@ -10,6 +10,8 @@ PeMundo::PeMundo()
 	explo = new PeSPFuego(origen, 5000, 10.0f, 0);
 	sistemasParticulas_.push_back(explo);
 	
+
+	rb = new PeRigidBody(origen, 2);
 	
 	vec3 g; g.x = 0; g.y = 0; g.z = 0;
 	setGravedad(g);
@@ -30,10 +32,9 @@ void PeMundo::dibuja(){
 
 
 	delta = glutGet(GLUT_ELAPSED_TIME);
-	explo->dibuja();
-	/*if (explo->destroy()){
-		explo = new PeSPExplosion(origen, 5000, 100.0, 0);
-	}*/
-	explo->update(delta);
-
+	//explo->dibuja();
+	
+	//explo->update(delta);
+	rb->dibuja();
+	//rb->update(delta);
 }
