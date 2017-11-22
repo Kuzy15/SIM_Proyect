@@ -20,7 +20,7 @@ private:
 
 	GLfloat delta;
 	GLfloat lastUpdate = glutGet(GLUT_ELAPSED_TIME);
-	int cont = 0;
+	GLfloat cont = 0;
 	/*aBodies;*/
 
 public:

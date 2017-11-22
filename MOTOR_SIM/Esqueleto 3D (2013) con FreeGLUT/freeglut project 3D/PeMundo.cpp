@@ -13,9 +13,7 @@ PeMundo::PeMundo()
 
 	rb = new PeRigidBody(origen, 2, 2);
 	
-	vec3 g; g.x = 0; g.y = 0; g.z = 0;
-	setGravedad(g);
-	sistemasParticulas_.front()->addFuerza(gravedad_);
+	sistemasParticulas_.front()->addFuerza(G);
 }
 
 
@@ -29,12 +27,16 @@ PeMundo::~PeMundo()
 
 void PeMundo::dibuja(){
 
-
-
-	delta = glutGet(GLUT_ELAPSED_TIME);
-	//explo->dibuja();
+	delta = glutGet(GLUT_ELAPSED_TIME) - lastUpdate;
 	
-	//explo->update(delta);
+	cont += delta / 1000;
+	lastUpdate = glutGet(GLUT_ELAPSED_TIME);
+
+	while (cont > 0.016){
+	
+		rb->update(0.016);
+		cont -= 0.016;
+	}
+
 	rb->dibuja();
-	rb->update(delta);
 }

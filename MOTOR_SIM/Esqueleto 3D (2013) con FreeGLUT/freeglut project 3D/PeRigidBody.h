@@ -34,7 +34,7 @@ private:
 		GLfloat a;
 	};
 	color3f _color;
-	const vec3 FG = vec3Multiply(G, _mass);
+	vec3 FG;
 	
 };
 

@@ -9,13 +9,20 @@ PeRigidBody::PeRigidBody(vec3 origen, GLfloat tam, GLfloat mass)
 	_force = vec3Zero();
 	_impulse = vec3Zero();
 
+
+
+
 	_color.a = 1; _color.r = 0.5; _color.b = 0.5; _color.g = 0.5;
 	_tam = tam;
 	_mass = mass;
 	_position = origen;
 	_impulse = vec3Zero();
+
+	FG = vec3Multiply(G, _mass);
 	//Gravedad
-	addForce(PeFuerza(FG));	
+	addForce(PeFuerza(FG));
+	vec3 f; f.x = 1000; f.y = 0; f.z = 0;
+	applyForce(PeFuerza(f));
 }
 
 
@@ -25,13 +32,10 @@ PeRigidBody::~PeRigidBody()
 
 
 void PeRigidBody::update(float dT){
-	dT -= _sec;
-	dT /= 100000;
-	dT /= 100000;
 
 	_position = vec3Add(_position, vec3Add(vec3Multiply(_vel, dT), vec3Divide(vec3Multiply(_aceleracion, (dT * dT)), 2)));
-	_vel = vec3Add(_vel, vec3Multiply(vec3Add(_aceleracion, FG), dT));
-	//_vel = vec3Add(_vel, vec3Multiply(_aceleracion, dT));
+	//_vel = vec3Add(_vel, vec3Multiply(vec3Add(_aceleracion, FG), dT));
+	_vel = vec3Add(_vel, vec3Multiply(_aceleracion, dT));
 	_aceleracion = vec3Divide(vec3Add(_force, _impulse), _mass);
 
 	//Reseteamos las fuerzas de impulso
