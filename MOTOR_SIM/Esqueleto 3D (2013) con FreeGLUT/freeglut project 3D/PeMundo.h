@@ -1,10 +1,11 @@
 #ifndef PEMUNDO_H
 #define PEMUNDO_H
 
-#include "PeSPExplosion.h"
-#include "PeSPFuego.h"
+
+#include "PeSistemaParticulas.h"
 #include "PeFuerza.h"
-#include "PeRigidBody.h"
+#include "PeSolidoRigido.h"
+
 
 class PeMundo
 {
@@ -13,6 +14,7 @@ private:
 	vec3 gravedad_; //Vector de la gravedad.
 	list<PeSistemaParticulas*> sistemasParticulas_; //Arrays de sistemas de partículas
 	list<PeFuerza*> fuerzas_;
+	list<PeSolidoRigido*> solidosRigidos_;
 	double lastFrame = 0;
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
@@ -27,7 +29,7 @@ public:
 	PeMundo();
 	~PeMundo();
 
-	PeRigidBody* rb;
+	
 	const vec3 getTam(){ return tam_; };
 
 	const vec3 getGravedad(){ return gravedad_; };
@@ -38,7 +40,11 @@ public:
 
 	inline void setGravedad(vec3 g){ gravedad_ = g; };
 
+	void update(float dT);
+
 	void dibuja();
+
+	void step();
 
 	
 

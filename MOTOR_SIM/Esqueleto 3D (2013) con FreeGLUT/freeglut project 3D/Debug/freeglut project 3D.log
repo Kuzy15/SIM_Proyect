@@ -1,12 +1,46 @@
-﻿Build started 22/11/2017 10:03:47.
-     1>Project "C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
+﻿Build started 22/11/2017 11:02:50.
+     1>Project "C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _USING_V110_SDK71_ /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /I"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _USING_V110_SDK71_ /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cara.cpp main.cpp Malla.cpp ObjetoCompuesto.cpp ObjetoCuadrico.cpp ObjetosCuadricos.cpp ObjetosMalla.cpp PeFuerza.cpp PeMundo.cpp PeParticula.cpp PeRigidBody.cpp PeSistemaParticulas.cpp PeSolidoRigido.cpp PeSPExplosion.cpp PeSPFuego.cpp PuntoVector3D.cpp VerticeNormal.cpp
+         VerticeNormal.cpp
+         PuntoVector3D.cpp
+         PeSPFuego.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+         PeSPExplosion.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(24): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespexplosion.cpp(9): warning C4305: '=' : truncation from 'double' to 'ccvType'
+         PeSolidoRigido.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+         PeSistemaParticulas.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+         PeRigidBody.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\perigidbody.cpp(6): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+         PeParticula.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\peparticula.cpp(10): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+         PeMundo.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(24): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(59): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(63): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(64): warning C4305: '-=' : truncation from 'double' to 'GLfloat'
+         PeFuerza.cpp
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+         ObjetosMalla.cpp
+         ObjetosCuadricos.cpp
+         ObjetoCuadrico.cpp
+         ObjetoCompuesto.cpp
+         Malla.cpp
          main.cpp
      1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
      1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
-     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(22): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(24): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
      1>c:\hlocal\proyecto\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\main.cpp(127): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+         Cara.cpp
+         Generating Code...
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1197,5): warning MSB8030: The linker switch "Minimum Required Version" requires "SubSystem" to be set.  Without "SubSystem", the "Minimum Required Version" would not be passed to linker and could prevent to the output binary from running on older Operating Systems.
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
@@ -21,13 +55,14 @@
          Debug\PeParticula.obj
          Debug\PeRigidBody.obj
          Debug\PeSistemaParticulas.obj
+         Debug\PeSolidoRigido.obj
          Debug\PeSPExplosion.obj
          Debug\PeSPFuego.obj
          Debug\PuntoVector3D.obj
          Debug\VerticeNormal.obj
          freeglut project 3D.vcxproj -> C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
-     1>Done Building Project "C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\hlocal\Proyecto\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.85
+Time Elapsed 00:00:04.83

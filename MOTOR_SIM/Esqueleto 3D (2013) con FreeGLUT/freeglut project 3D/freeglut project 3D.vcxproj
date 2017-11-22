@@ -78,6 +78,7 @@
     <ClCompile Include="PeParticula.cpp" />
     <ClCompile Include="PeRigidBody.cpp" />
     <ClCompile Include="PeSistemaParticulas.cpp" />
+    <ClCompile Include="PeSolidoRigido.cpp" />
     <ClCompile Include="PeSPExplosion.cpp" />
     <ClCompile Include="PeSPFuego.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
@@ -98,6 +99,7 @@
     <ClInclude Include="PeParticula.h" />
     <ClInclude Include="PeRigidBody.h" />
     <ClInclude Include="PeSistemaParticulas.h" />
+    <ClInclude Include="PeSolidoRigido.h" />
     <ClInclude Include="PeSPExplosion.h" />
     <ClInclude Include="PeSPFuego.h" />
     <ClInclude Include="PuntoVector3D.h" />

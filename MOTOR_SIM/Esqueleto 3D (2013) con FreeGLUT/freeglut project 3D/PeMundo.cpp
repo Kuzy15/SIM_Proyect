@@ -1,5 +1,6 @@
 #include "PeMundo.h"
-
+#include "PeSPExplosion.h"
+#include "PeSPFuego.h"
 
 PeMundo::PeMundo()
 {
@@ -10,8 +11,6 @@ PeMundo::PeMundo()
 	explo = new PeSPFuego(origen, 5000, 10.0f, 0);
 	sistemasParticulas_.push_back(explo);
 	
-
-	rb = new PeRigidBody(origen, 2, 2);
 	
 	sistemasParticulas_.front()->addFuerza(G);
 }
@@ -25,7 +24,34 @@ PeMundo::~PeMundo()
 	}
 }
 
+
+void PeMundo::update(float dT){
+
+	for (auto w : solidosRigidos_){
+		w->update(dT);
+	}
+
+	for (auto sP : sistemasParticulas_){
+		for (auto p : sP->getParticulas()){
+			p->update(dT);
+		}
+	}
+}
+
 void PeMundo::dibuja(){
+
+	for (auto w : solidosRigidos_){
+		w->dibuja();
+	}
+	
+	for (auto sP : sistemasParticulas_){
+		for (auto p : sP->getParticulas()){
+			p->dibuja();
+		}
+	}
+}
+
+void PeMundo::step(){
 
 	delta = glutGet(GLUT_ELAPSED_TIME) - lastUpdate;
 	
@@ -34,9 +60,9 @@ void PeMundo::dibuja(){
 
 	while (cont > 0.016){
 	
-		rb->update(0.016);
+		update(0.016);
 		cont -= 0.016;
 	}
-
-	rb->dibuja();
+	dibuja();
+	
 }
