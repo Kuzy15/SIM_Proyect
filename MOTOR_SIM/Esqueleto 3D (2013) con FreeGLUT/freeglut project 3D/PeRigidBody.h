@@ -13,6 +13,8 @@ public:
 	void update(float dT);
 	void addForce(PeFuerza nF);
 	void applyForce(PeFuerza impulse);
+	void applyTorque(const vec3 & torque);
+	void calculateMassCenter();
 	void dibuja();
 private:
 	float _tam;
@@ -25,6 +27,7 @@ private:
 	vec3 _torque;
 	vec3 _aceleracion;
 	vec3 _impulse;
+	vec3 _massCenter;
 
 	GLfloat _sec;
 	struct color3f {

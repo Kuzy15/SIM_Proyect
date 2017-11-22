@@ -63,3 +63,21 @@ void PeRigidBody::dibuja() {
 	glutSolidCube(_tam);
 	glPopMatrix();
 }
+
+
+void PeRigidBody::applyTorque(const vec3 & torque){
+
+	_torque += torque;
+} 
+
+void PeRigidBody::calculateMassCenter(){
+
+	vec3 massCenter;
+
+	float weight = _mass * 9.8;
+	massCenter.x = (_position.x * weight) / (_mass * 9.8);
+	massCenter.y = (_position.y * weight) / (_mass * 9.8);
+	massCenter.z = (_position.z * weight) / (_mass * 9.8);
+
+	_massCenter = massCenter;
+}
