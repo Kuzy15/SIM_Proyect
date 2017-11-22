@@ -53,8 +53,9 @@ void PeParticula::update(GLfloat deltaTime){
 
 		if (vidaRes_ >= 0)
 			vidaRes_ -= deltaTime;
-
 	}
 
+	color_.r += vida_ / 250;
+	color_.g += vida_ / 250;
 }
 

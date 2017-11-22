@@ -7,7 +7,7 @@ PeMundo::PeMundo()
 	
 	origen.x = 0; origen.y = 0; origen.z = 0;
 	//explo = new PeSPExplosion(origen, 5000, 100.0, 0);
-	explo = new PeSPFuego(origen, 5000, 10.0f, 0);
+	explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 	sistemasParticulas_.push_back(explo);
 	
 
@@ -32,9 +32,9 @@ void PeMundo::dibuja(){
 
 
 	delta = glutGet(GLUT_ELAPSED_TIME);
-	//explo->dibuja();
+	explo->dibuja();
 	
-	//explo->update(delta);
-	rb->dibuja();
-	rb->update(delta);
+	explo->update(delta);
+	//rb->dibuja();
+	//rb->update(delta);
 }
