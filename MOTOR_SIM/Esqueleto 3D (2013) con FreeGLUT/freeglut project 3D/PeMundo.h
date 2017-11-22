@@ -3,7 +3,6 @@
 
 
 #include "PeSistemaParticulas.h"
-#include "PeFuerza.h"
 #include "PeSolidoRigido.h"
 
 
@@ -19,10 +18,13 @@ private:
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
 	vec3 origen;
+	vec3 a;
 
 	GLfloat delta;
 	GLfloat lastUpdate = glutGet(GLUT_ELAPSED_TIME);
 	GLfloat cont = 0;
+
+	PeFuerza fE;
 	/*aBodies;*/
 
 public:
@@ -39,6 +41,8 @@ public:
 	inline list<PeFuerza*> getFuerzas(){ return fuerzas_; };
 
 	inline void setGravedad(vec3 g){ gravedad_ = g; };
+
+	void input(unsigned char key);
 
 	void update(float dT);
 

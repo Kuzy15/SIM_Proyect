@@ -66,6 +66,9 @@
     <ClCompile Include="PeSolidoRigido.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PeCubo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -126,6 +129,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PeSolidoRigido.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeCubo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,11 +13,13 @@ private:
 	vec3 dir_;
 
 public:
+	PeFuerza();
 	PeFuerza(vec3 f);
 	virtual ~PeFuerza();
 
 	//virtual vec3 GetFuerza() = 0;
 
+	void setDir(vec3 d);
 
 	inline vec3 GetDirectionVector(){ return dir_; };
 };

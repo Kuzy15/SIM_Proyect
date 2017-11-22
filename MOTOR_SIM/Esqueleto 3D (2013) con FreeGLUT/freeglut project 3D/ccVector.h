@@ -32,11 +32,11 @@ extern "C"
 #include <assert.h>
 #endif
 
-#ifndef inline
+/*#ifndef inline
 #ifdef _MSC_VER
 #define inline __inline
 #endif
-#endif
+#endif*/
 
 
 // Concatenation utility

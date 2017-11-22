@@ -25,15 +25,15 @@ bool stop = false;
 PeMundo* p;
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 500;
+int WIDTH= 1000, HEIGHT= 1000;
 
 // Viewing frustum parameters
-GLdouble xRight=20, xLeft=-xRight, yTop=20, yBot=-yTop, N=1, F=1000;
+GLdouble xRight=40, xLeft=-xRight, yTop=40, yBot=-yTop, N=1, F=1000;
 
 // Camera parameters
-GLdouble eyeX=100.0, eyeY=100, eyeZ=100;
+GLdouble eyeX=0, eyeY=100, eyeZ=0;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
-GLdouble upX=0, upY=1, upZ=0;
+GLdouble upX=0, upY=0, upZ=-1;
 
 // Scene variables
 GLfloat angX, angY, angZ; 
@@ -181,16 +181,10 @@ void key(unsigned char key, int x, int y){
 			stop = true;
 			
 			break;		 
-		case 'a': angX=angX+5; break;
-		case 'z': angX=angX-5; break; 
-		case 's': angY=angY+5; break;
-		case 'x': angY=angY-5; break;
-		case 'd': angZ=angZ+5; break;
-		case 'c': angZ=angZ-5; break;  	
-		case 'f': 	
-			break;
+
 		default:
-			need_redisplay = false;
+			p->input(key);
+			//need_redisplay = false;
 			break;
 	}
 

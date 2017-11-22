@@ -52,3 +52,13 @@ void DiscoParcial::dibuja(){
 	glPopMatrix();
 
 }
+
+void Cubo::dibuja(){
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+
+	glMultMatrixf(mT->getM());
+	glutSolidCube(size_);
+	glPopMatrix();
+
+}

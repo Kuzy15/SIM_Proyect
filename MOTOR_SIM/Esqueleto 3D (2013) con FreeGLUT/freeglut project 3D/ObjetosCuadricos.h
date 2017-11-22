@@ -58,4 +58,16 @@ private:
 
 };
 
+//Cubo
+class Cubo :
+	public ObjetoCuadrico {
+public:
+	Cubo(GLfloat size) : size_(size){};
+	virtual ~Cubo(){};
+	virtual void dibuja();
+private:
+	GLfloat size_;
+
+};
+
 #endif

@@ -1,18 +1,12 @@
 #include "PeMundo.h"
-#include "PeSPExplosion.h"
-#include "PeSPFuego.h"
+
+#include "PeCubo.h"
 
 PeMundo::PeMundo()
 {
-	
-	
 	origen.x = 0; origen.y = 0; origen.z = 0;
-	//explo = new PeSPExplosion(origen, 5000, 100.0, 0);
-	explo = new PeSPFuego(origen, 5000, 10.0f, 0);
-	sistemasParticulas_.push_back(explo);
 	
 	
-	sistemasParticulas_.front()->addFuerza(G);
 }
 
 
@@ -65,4 +59,45 @@ void PeMundo::step(){
 	}
 	dibuja();
 	
+}
+
+void PeMundo::input(unsigned char key){
+
+	switch (key) {
+	case 'w':
+		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
+		 a.x = 0; a.y = 200; a.z = -50;
+		fE.setDir(a);
+		
+		solidosRigidos_.front()->getRB()->applyForce(fE);
+		break;
+	case 'a': 
+		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
+		a.x = -100; a.y = 0; a.z = 0;
+		fE.setDir(a);
+		
+		solidosRigidos_.front()->getRB()->applyForce(fE);
+		solidosRigidos_.front()->getRB()->setRozamiento(true,0.2);
+		break;
+	case 's':  
+		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
+		a.x = -100; a.y = 0; a.z = 0;
+		fE.setDir(a);
+
+		solidosRigidos_.front()->getRB()->applyForce(fE);
+		solidosRigidos_.front()->getRB()->setRozamiento(true, 0.4);
+		break;
+	case 'd': 
+		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
+		a.x = 50; a.y = 200; a.z = 0;
+		fE.setDir(a);
+		
+		solidosRigidos_.front()->getRB()->applyForce(fE);
+		break;
+	default:
+		
+		break;
+	}
+
+
 }
