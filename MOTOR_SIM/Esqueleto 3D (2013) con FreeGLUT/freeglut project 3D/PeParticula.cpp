@@ -1,4 +1,5 @@
 #include "PeParticula.h"
+#include <iostream>
 
 
 PeParticula::PeParticula(float tam, float masa, float vida, vec3 pos, color3f color, vec3 velocidad, vec3 g) :
@@ -36,8 +37,6 @@ void PeParticula::dibuja(){
 
 void PeParticula::update(GLfloat deltaTime){
 
-	deltaTime -= sec_;
-	deltaTime /= 10000;
 	if (vidaRes_ <= 0 && vida_ != -1)
 	{
 		//borrar
@@ -51,10 +50,13 @@ void PeParticula::update(GLfloat deltaTime){
 		pos_ = vec3Add(pos_, vec3Add(vec3Multiply(vel_,deltaTime), vec3Divide(vec3Multiply(aceleracion_, (deltaTime * deltaTime)), 2)));
 		vel_ = vec3Add(vel_, vec3Multiply(vec3Add(aceleracion_, FuerzaG), deltaTime));
 
-		if (vidaRes_ >= 0)
-			vidaRes_ -= deltaTime;
+		if (vidaRes_ >= 0){
+			vidaRes_ = vidaRes_ - deltaTime;
+		}
 
 	}
-
+	// SOLO PARA FUEGO
+	color_.r += vida_ / 1000;
+	color_.g += vida_ / 1000;
 }
 

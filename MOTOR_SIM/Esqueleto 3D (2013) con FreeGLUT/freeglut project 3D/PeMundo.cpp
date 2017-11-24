@@ -1,12 +1,13 @@
 #include "PeMundo.h"
 
 #include "PeCubo.h"
+#include "PeSPFuego.h"
 
 PeMundo::PeMundo()
 {
 	origen.x = 0; origen.y = 0; origen.z = 0;
 	
-	
+	explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 }
 
 
@@ -30,6 +31,7 @@ void PeMundo::update(float dT){
 			p->update(dT);
 		}
 	}
+	explo->update(dT);
 }
 
 void PeMundo::dibuja(){
@@ -43,6 +45,7 @@ void PeMundo::dibuja(){
 			p->dibuja();
 		}
 	}
+	explo->dibuja();
 }
 
 void PeMundo::step(){
