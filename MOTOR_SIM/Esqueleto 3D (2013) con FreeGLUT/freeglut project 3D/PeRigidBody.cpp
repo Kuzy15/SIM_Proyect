@@ -3,6 +3,21 @@
 
 PeRigidBody::PeRigidBody(vec3 origen, float mass)
 {
+
+	//Tensor de inercia. BUSCAR TAM
+	_Ibody[0][0] = ((mass / 12)* (pow(_tam, 2) + pow(_tam, 2)));
+	_Ibody[1][1] = ((mass / 12)* (pow(_tam, 2) + pow(_tam, 2)));
+	_Ibody[2][2] = ((mass / 12)* (pow(_tam, 2) + pow(_tam, 2)));
+
+	//Inversa
+	mat3x3Inverse(_Ibodyinv, _Ibody);
+
+	//Inicialización variables
+	_position = origen;
+	mat3x3Identity(_R);
+	_P = vec3Zero();
+	_L = vec3Zero();
+
 	coefRoz = 0;
 	_vel = vec3Zero();
 	_aceleracion = vec3Zero();
@@ -10,7 +25,6 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 	_impulse = vec3Zero();
 	_fRoz = 0;
 	_mass = mass;
-	_position = origen;
 	_impulse = vec3Zero();
 
 	FG_ = vec3Multiply(G, _mass);
