@@ -32,18 +32,10 @@ public:
 
 	}
 
-	void rota(GLfloat ang, GLfloat x, GLfloat y, GLfloat z)
+	void rota(float* r)
 	{
 		glMatrixMode(GL_MODELVIEW);
-		glPushMatrix();
-		glLoadIdentity();
-		glRotatef(ang,x, y, z);
-		GLfloat m1[16];
-		//Dejar la matriz actual de modelado-vista en m1
-		//Los 16 datos están enumerados por columnas
-		glGetFloatv(GL_MODELVIEW_MATRIX, m1);
-		glPopMatrix();
-		postMultiplica(m1);
+		postMultiplica(r);
 	}
 
 	void escala(GLfloat x, GLfloat y, GLfloat z) 
@@ -78,6 +70,19 @@ public:
 		return m;
 	}
 
+	void reset(){
+	
+		glMatrixMode(GL_MODELVIEW);
+		glPushMatrix();
+		glLoadIdentity();
+		GLfloat m1[16];
+		//Dejar la matriz actual de modelado-vista en m1
+		//Los 16 datos están enumerados por columnas
+		glGetFloatv(GL_MODELVIEW_MATRIX, m1);
+		glPopMatrix();
+		postMultiplica(m1);
+
+	}
 
 protected:
 	

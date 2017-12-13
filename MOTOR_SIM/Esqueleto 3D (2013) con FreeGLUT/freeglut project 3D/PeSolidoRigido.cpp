@@ -18,13 +18,16 @@ void PeSolidoRigido::update(const float &dT){
 
 	rb_->update(dT);
 	
-	ob_->getMatriz()->traslada(rb_->getPos().x, rb_->getPos().y, rb_->getPos().z);
+	
 	
 }
 
 void PeSolidoRigido::dibuja(){
-
+	
+	ob_->getMatriz()->traslada(rb_->getPos().x, rb_->getPos().y, rb_->getPos().z);
+	ob_->getMatriz()->rota(rb_->getR());
 	ob_->dibuja();
+	ob_->getMatriz()->reset();
 }
 
 void PeSolidoRigido::setGravedad(bool g){

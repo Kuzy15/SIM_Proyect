@@ -102,6 +102,7 @@ typedef float ccvType;
 #define CCV_FUNC_MAT_IDENTITY(dim)        CAT2(CCV_MAT_TYPENAME(dim), Identity)
 #define CCV_FUNC_MAT_MULTIPLY_SCALAR(dim) CAT2(CCV_MAT_TYPENAME(dim), MultiplyScalar)
 #define CCV_FUNC_MAT_MULTIPLY_VECTOR(dim) CAT2(CCV_MAT_TYPENAME(dim), MultiplyVector)
+#define CCV_FUNC_MAT_STAR(dim)            CAT2(CCV_MAT_TYPENAME(dim), Star)
 #define CCV_FUNC_MAT_MULTIPLY_MATRIX(dim) CAT2(CCV_MAT_TYPENAME(dim), MultiplyMatrix)
 #define CCV_FUNC_MAT_GET_ROW(dim)         CAT2(CCV_MAT_TYPENAME(dim), GetRow)
 #define CCV_FUNC_MAT_GET_COL(dim)         CAT2(CCV_MAT_TYPENAME(dim), GetCol)
@@ -320,6 +321,13 @@ typedef float ccvType;
 		return v; \
 	}
 
+#define CCV_DEFINE_MAT_STAR(dim) \
+	static inline void CCV_FUNC_MAT_STAR(dim)(CCV_MAT_TYPENAME(dim) m, const CCV_VEC_TYPENAME(dim) b) { \
+		m[0][0] = 0; m[0][1] = -b.v[2]; m[0][2] = b.v[1];  \
+		m[1][0] = b.v[2]; m[1][1] = 0; m[1][2] = -b.v[0];  \
+		m[2][0] = -b.v[1]; m[2][1] = b.v[0]; m[2][2] = 0;  \
+		}
+
 #define CCV_DEFINE_MAT_MULTIPLY_MATRIX(dim) \
 	static inline void CCV_FUNC_MAT_MULTIPLY_MATRIX(dim)(CCV_MAT_TYPENAME(dim) m, const CCV_MAT_TYPENAME(dim) a, const CCV_MAT_TYPENAME(dim) b) { \
 		unsigned int i, j, k; \
@@ -403,6 +411,7 @@ typedef float ccvType;
 	CCV_DEFINE_MAT_IDENTITY(dim) \
 	CCV_DEFINE_MAT_MULTIPLY_SCALAR(dim) \
 	CCV_DEFINE_MAT_MULTIPLY_VECTOR(dim) \
+	CCV_DEFINE_MAT_STAR(dim) \
 	CCV_DEFINE_MAT_MULTIPLY_MATRIX(dim) \
 	CCV_DEFINE_MAT_GET_ROW(dim) \
 	CCV_DEFINE_MAT_GET_COL(dim) \

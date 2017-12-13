@@ -7,7 +7,7 @@ PeMundo::PeMundo()
 {
 	origen.x = 0; origen.y = 0; origen.z = 0;
 	
-	explo = new PeSPFuego(origen, 5000, 8.0f, 0);
+	//explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 }
 
 
@@ -31,7 +31,7 @@ void PeMundo::update(float dT){
 			p->update(dT);
 		}
 	}
-	explo->update(dT);
+	//explo->update(dT);
 }
 
 void PeMundo::dibuja(){
@@ -45,7 +45,7 @@ void PeMundo::dibuja(){
 			p->dibuja();
 		}
 	}
-	explo->dibuja();
+	//explo->dibuja();
 }
 
 void PeMundo::step(){
@@ -75,16 +75,16 @@ void PeMundo::input(unsigned char key){
 		solidosRigidos_.front()->getRB()->applyForce(fE);
 		break;
 	case 'a': 
-		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
+		solidosRigidos_.push_front(new PeCubo(2, origen, 10));
 		a.x = -100; a.y = 0; a.z = 0;
 		fE.setDir(a);
 		
-		solidosRigidos_.front()->getRB()->applyForce(fE);
+		//solidosRigidos_.front()->getRB()->addForce(fE);
 		solidosRigidos_.front()->getRB()->setRozamiento(true,0.2);
 		break;
 	case 's':  
 		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
-		a.x = -100; a.y = 0; a.z = 0;
+		a.x = 0; a.y = 0; a.z = 100;
 		fE.setDir(a);
 
 		solidosRigidos_.front()->getRB()->applyForce(fE);
