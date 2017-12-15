@@ -7,6 +7,15 @@
 
 class PeRigidBody
 {
+	struct Contact {
+		PeRigidBody *a,	/* body containing vertex */
+			*b; 		/* body containing face */
+		vec3 p, 	    /* world-space vertex location */
+			n, 	    /* outwards pointing normal of face */
+			ea,		    /* edge direction for A */
+			eb; 		/* edge direction for B */
+		bool vf; 	    /* true if vertex/face contact */
+	};
 public:
 	PeRigidBody(vec3 origen, float mass);
 	virtual ~PeRigidBody();
@@ -16,6 +25,9 @@ public:
 	void applyForce(PeFuerza impulse);
 	void setRozamiento(bool r, float cR);
 	void computeForces();
+	bool colliding(PeRigidBody*c);
+	/*Return true if bodies are in colliding contact.*/
+	inline const vec3 &getVel(){ return _vel; }
 	inline const vec3 &getPos(){ return _position; };
 	inline float* getR()
 	{ 
@@ -55,7 +67,7 @@ private:
 	float _fRoz;
 	bool hasRozamiento;
 	
-	
+	Contact c;
 };
 
 #endif

@@ -3,9 +3,10 @@
 
 #include "ObjetosCuadricos.h"
 #include "PeRigidBody.h"
-
+#include <iostream>
 class PeSolidoRigido
 {
+	
 protected:
 	ObjetoCuadrico* ob_;
 	PeRigidBody* rb_;
@@ -20,7 +21,7 @@ public:
 
 
 	inline PeRigidBody* getRB(){ return rb_; }
-
+	inline bool colision(PeRigidBody* c){ return rb_->colliding(c); }
 	struct color3f {
 		GLfloat r;
 		GLfloat g;

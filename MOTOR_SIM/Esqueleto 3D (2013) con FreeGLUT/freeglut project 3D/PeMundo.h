@@ -8,6 +8,7 @@
 
 class PeMundo
 {
+	
 private:
 	vec3 tam_; //Longitud en los tres ejes del tamaño del mundo
 	vec3 gravedad_; //Vector de la gravedad.

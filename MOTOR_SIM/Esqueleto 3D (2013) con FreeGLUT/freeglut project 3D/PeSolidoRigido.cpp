@@ -25,6 +25,8 @@ void PeSolidoRigido::update(const float &dT){
 void PeSolidoRigido::dibuja(){
 	
 	ob_->getMatriz()->traslada(rb_->getPos().x, rb_->getPos().y, rb_->getPos().z);
+
+	std::cout << rb_->getPos().x << rb_->getPos().y << rb_->getPos().z << "-----";
 	ob_->getMatriz()->rota(rb_->getR());
 	ob_->dibuja();
 	ob_->getMatriz()->reset();
