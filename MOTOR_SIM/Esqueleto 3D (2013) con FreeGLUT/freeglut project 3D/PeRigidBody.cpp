@@ -33,6 +33,7 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 
 	coefRoz = 0;
 	_vel = vec3Zero();
+	_vel.x = 0; _vel.y = -0.01; _vel.z = 0;
 	_aceleracion = vec3Zero();
 	_force = vec3Zero();
 	_torque = vec3Zero();
@@ -71,8 +72,8 @@ void PeRigidBody::update(float dT){
 	_L = vec3Add(_L, vec3Multiply( _torque,dT));
 
 	/* v(t) = P(t)/M */
-	_vel = vec3Divide(_P, _mass);
-
+	//_vel = vec3Divide(_P, _mass);
+	_position = vec3Add(_position, _vel);
 	/* ω(t) = I−1(t)L(t) */
 	_omega = mat3x3MultiplyVector(_Iinv, _L);
 

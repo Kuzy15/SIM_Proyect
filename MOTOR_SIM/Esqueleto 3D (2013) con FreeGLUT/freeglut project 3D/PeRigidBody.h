@@ -28,6 +28,7 @@ public:
 	bool colliding(PeRigidBody*c);
 	/*Return true if bodies are in colliding contact.*/
 	inline const vec3 &getVel(){ return _vel; }
+	inline const float &getTam() { return _tam; }
 	inline const vec3 &getPos(){ return _position; };
 	inline float* getR()
 	{ 

@@ -4,7 +4,7 @@
 
 #include "PeSistemaParticulas.h"
 #include "PeSolidoRigido.h"
-
+#include "PeCollisionManager.h"
 
 class PeMundo
 {
@@ -20,7 +20,7 @@ private:
 	PeSistemaParticulas* explo;
 	vec3 origen;
 	vec3 a;
-
+	PeCollisionManager* colisions;
 	GLfloat delta;
 	GLfloat lastUpdate = glutGet(GLUT_ELAPSED_TIME);
 	GLfloat cont = 0;

@@ -5,11 +5,11 @@
 
 PeMundo::PeMundo()
 {
-	origen.x = 0; origen.y = -0.01; origen.z = 0;
+	origen.x = 0; origen.y = 0; origen.z = 0;
 	
 	//explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 	solidosRigidos_.push_front(new PeCubo(2, origen, 10));
-
+	colisions = new PeCollisionManager(solidosRigidos_);
 }
 
 
@@ -24,6 +24,7 @@ PeMundo::~PeMundo()
 
 void PeMundo::update(float dT){
 
+	colisions->CollisionCheck();
 	for (auto w : solidosRigidos_){
 		
 			w->update(dT);
@@ -75,7 +76,9 @@ void PeMundo::input(unsigned char key){
 	case 'w':
 
 		origen.x = 0; origen.y = -0.02; origen.z = 0;
-		solidosRigidos_.push_front(new PeCubo(2, origen, 10));
+		solidosRigidos_.push_front(new PeCubo(5, origen, 15));
+
+		colisions->ChangeList(solidosRigidos_);
 		/*solidosRigidos_.push_front(new PeCubo(2, origen, 1));
 		 a.x = 0; a.y = 200; a.z = -50;
 		fE.setDir(a);
