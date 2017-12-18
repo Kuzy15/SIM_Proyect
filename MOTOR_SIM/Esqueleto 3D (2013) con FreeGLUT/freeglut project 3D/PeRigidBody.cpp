@@ -1,10 +1,13 @@
 ﻿#include "PeRigidBody.h"
 #include <iostream>
 
+
+
+
 PeRigidBody::PeRigidBody(vec3 origen, float mass)
 {
 
-	_tam = 2;
+	_tam = 0.5;
 
 	mat3x3Identity(_Ibody);
 	//Tensor de inercia. BUSCAR TAM
@@ -40,9 +43,13 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 	_impulse = vec3Zero();
 	_fRoz = 0;
 	_mass = mass;
+	torqueAc = vec3Zero();
+	forceAc = vec3Zero();
 	_impulse = vec3Zero();
 
 	FG_ = vec3Multiply(G, _mass);
+
+	
 
 }
 
@@ -57,6 +64,7 @@ void PeRigidBody::update(float dT){
 	computeForces();
 
 	_position = vec3Add(_position, vec3Multiply(_vel,dT));
+
 
 	/* Compute R˙(t) = ω(t)∗R(t) */
 	mat3x3 RStar, Raux;
@@ -84,40 +92,35 @@ void PeRigidBody::update(float dT){
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);
 	
+	normalize();
+
+
 	//Matrices.
-	mat4x4 T;
+	mat4x4 T, Raux2;
 	mat4x4Identity(T);
+	mat4x4Identity(Raux2);
 	mat4x4Identity(_M);
 	T[0][3] = _position.x; T[1][3] = _position.y; T[2][3] = _position.z; 
-	mat4x4MultiplyMatrix(_M, T, getR4x4());
+	//mat4x4MultiplyMatrix(_M, T, getR4x4());
+	getR4x4(Raux2);
+	mat4x4MultiplyMatrix(_M, T, Raux2);
 	
-
-	
-	
-	//Reseteamos las fuerzas de impulso*/
-
-	_impulse = vec3Zero();
 }
 
 void PeRigidBody::addForce(PeFuerza nF){
 
 
-	_force = vec3Add(_force, nF.GetDirectionVector());
+	forceAc = vec3Add(forceAc, nF.GetDirectionVector());
 
 }
 
 void PeRigidBody::addTorque(PeFuerza nF){
 
 
-	_torque = vec3Add(_torque, nF.GetDirectionVector());
+	torqueAc = vec3Add(torqueAc, nF.GetDirectionVector());
 
 }
 
-void PeRigidBody::applyForce(PeFuerza nI){
-
-	_impulse = vec3Add(_impulse, nI.GetDirectionVector());
-
-}
 
 void PeRigidBody::setRozamiento(bool r, float cR){
 
@@ -136,11 +139,11 @@ void PeRigidBody::computeForces(){
 	_force = vec3Zero();
 	_torque = vec3Zero();
 
-	//addForce(FG_);
-	//vec3 t = vec3Zero();
-	//t.x = 0.1;
+	addForce(FG_);
+	_torque = torqueAc;
+	_force = forceAc;
 
-	//addTorque(t);
 	
-
+	forceAc = vec3Zero();
+	torqueAc = vec3Zero();
 }

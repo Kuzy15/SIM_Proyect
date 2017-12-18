@@ -1,5 +1,11 @@
-﻿  PeRigidBody.cpp
-c:\hlocal\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
-c:\hlocal\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\perigidbody.h(28): warning C4172: returning address of local variable or temporary
+﻿  PeMundo.cpp
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(24): warning C4244: 'initializing' : conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(56): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(60): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(61): warning C4305: '-=' : truncation from 'double' to 'GLfloat'
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(87): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\hlocal\manu\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(95): warning C4305: 'argument' : truncation from 'double' to 'float'
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1197,5): warning MSB8030: The linker switch "Minimum Required Version" requires "SubSystem" to be set.  Without "SubSystem", the "Minimum Required Version" would not be passed to linker and could prevent to the output binary from running on older Operating Systems.
-  freeglut project 3D.vcxproj -> C:\hlocal\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
+  freeglut project 3D.vcxproj -> C:\hlocal\manu\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe

@@ -5,7 +5,7 @@
 
 PeMundo::PeMundo()
 {
-	origen.x = 0; origen.y = -0.01; origen.z = 0;
+	origen.x = 0; origen.y = 10; origen.z = 0;
 	
 	//explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 }
@@ -65,21 +65,25 @@ void PeMundo::step(){
 }
 
 void PeMundo::input(unsigned char key){
-
+	vec3 t = vec3Zero();
 	switch (key) {
 	case 'w':
 		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
 		 a.x = 0; a.y = 200; a.z = -50;
 		fE.setDir(a);
 		
-		solidosRigidos_.front()->getRB()->applyForce(fE);
+		solidosRigidos_.front()->getRB()->addForce(fE);
 		break;
 	case 'a': 
 		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
-		a.x = -100; a.y = 0; a.z = 0;
+		a.x = 100; a.y = 0; a.z = 100;
 		fE.setDir(a);
 		
-		//solidosRigidos_.front()->getRB()->addForce(fE);
+		t.y = 100; t.x = 100;
+
+		solidosRigidos_.front()->getRB()->addTorque(t);
+		
+		solidosRigidos_.front()->getRB()->addForce(fE);
 		solidosRigidos_.front()->getRB()->setRozamiento(true,0.2);
 		break;
 	case 's':  
@@ -87,7 +91,7 @@ void PeMundo::input(unsigned char key){
 		a.x = 0; a.y = 0; a.z = 100;
 		fE.setDir(a);
 
-		solidosRigidos_.front()->getRB()->applyForce(fE);
+		
 		solidosRigidos_.front()->getRB()->setRozamiento(true, 0.4);
 		break;
 	case 'd': 
@@ -95,7 +99,7 @@ void PeMundo::input(unsigned char key){
 		a.x = 50; a.y = 200; a.z = 0;
 		fE.setDir(a);
 		
-		solidosRigidos_.front()->getRB()->applyForce(fE);
+		
 		break;
 	default:
 		

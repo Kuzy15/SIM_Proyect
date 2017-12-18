@@ -31,7 +31,7 @@ int WIDTH= 1000, HEIGHT= 1000;
 GLdouble xRight=40, xLeft=-xRight, yTop=40, yBot=-yTop, N=1, F=1000;
 
 // Camera parameters
-GLdouble eyeX=100, eyeY=0, eyeZ=0;
+GLdouble eyeX=100, eyeY=100, eyeZ=100;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
 GLdouble upX=0, upY=1, upZ=0;
 

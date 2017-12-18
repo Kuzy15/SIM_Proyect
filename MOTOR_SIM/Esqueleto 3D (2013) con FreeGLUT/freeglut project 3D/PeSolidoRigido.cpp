@@ -18,12 +18,14 @@ void PeSolidoRigido::update(const float &dT){
 	//Actualizamos el estado
 	rb_->update(dT);
 	//Actualizamos la matriz de OpenGl
+	float debug[16];
 	for (size_t i = 0; i < 4; i++){
 		for (size_t j = 0; j < 4; j++){
-		ob_->getMatriz()->getM()[4 * i + j] = rb_->getMfin()[i][j];
+			ob_->getMatriz()->getM()[4 * i + j] = rb_->getMfin()[j][i];
+			
 		}
 	}
-
+	bool mierda = false;
 }
 
 void PeSolidoRigido::dibuja(){
