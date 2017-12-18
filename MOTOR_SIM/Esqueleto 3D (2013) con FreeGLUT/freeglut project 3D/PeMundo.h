@@ -19,6 +19,12 @@ private:
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
 	vec3 origen;
+
+
+	vec3 origen2;
+
+
+
 	vec3 tempVec;
 	vec3 a;
 	PeCollisionManager* colisions;

@@ -22,13 +22,65 @@ void PeCollisionManager::ChangeList(std::list<PeSolidoRigido*> * nueva)
 }
 bool PeCollisionManager::CollisionDetect(PeSolidoRigido* col1, PeSolidoRigido* col2) {
 	//se comprueba si hay colision entre col1 y col2
-	if (col1 == nullptr || col2 == nullptr) return false;
-	float t = (float)col1->getRB()->getPos().x;
+	//if (col1 == nullptr || col2 == nullptr) return false;
+	//float t = (float)col1->getRB()->getPos().x;
 	return std::sqrt(std::pow((col1->getRB()->getPos().x - col2->getRB()->getPos().x), 2) +
 		std::pow((col1->getRB()->getPos().y - col2->getRB()->getPos().y), 2) +
 		std::pow((col1->getRB()->getPos().z - col2->getRB()->getPos().z), 2)) < col1->getRB()->getTam() + col2->getRB()->getTam();
 
 }
+
+bool PeCollisionManager::CollisionDetectCubo(PeSolidoRigido* col1, PeSolidoRigido* col2) {
+	float x1, y1, z1, x2, y2, z2, tam1, tam2;
+	tam1 = col1->getRB()->getTam();
+	tam2 = col2->getRB()->getTam();
+
+	x1 = col1->getRB()->getPos().x - tam1 / 2;
+	y1 = col1->getRB()->getPos().y - tam1 / 2;
+	z1 = col1->getRB()->getPos().z - tam1 / 2;
+	x2 = col2->getRB()->getPos().x - tam2 / 2;
+	y2 = col2->getRB()->getPos().y - tam2 / 2;
+	z2 = col2->getRB()->getPos().z - tam2 / 2;
+
+	return (x1 + tam1 >= x2 && x1 <= x2 || y1 + tam1 >= y2 && y1 <= y2 || z1 + tam1 >= z2 && z1 < z2);
+
+}
+
+bool PeCollisionManager::CollisionDetectEsfera(PeSolidoRigido* col1, PeSolidoRigido* col2) {
+
+	
+	float x1, y1, z1, x2, y2, z2;
+	
+	float r1, r2;
+
+	r1 = col1->getRB()->getTam();
+	r2 = col2->getRB()->getTam();
+
+	x1 = col1->getRB()->getPos().x;
+	y1 = col1->getRB()->getPos().y;
+	z1 = col1->getRB()->getPos().z;
+	x2 = col2->getRB()->getPos().x;
+	y2 = col2->getRB()->getPos().y;
+	z2 = col2->getRB()->getPos().z;
+
+	float distance;
+
+	float aux = (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2) + (z1 - z2)*(z1 - z2);
+
+	distance = std::sqrt(aux);
+
+	std::cout << "ay CHIGUAGUAAAAAAAAAAAAA!";
+
+	return (distance <= r1 + r2);
+}
+
+
+void PeCollisionManager::collisionReactionsOMG(PeSolidoRigido* col1, PeSolidoRigido* col2) {
+
+}
+
+
+
 
 //el metodo collisionCheck nos devuelve una lista de solidos en la cual LA POSICION del puntero en dicha lista 
 //nos indica el primer objeto que colisiona , que esta en la misma posicion en la lista solidosRigidos_,

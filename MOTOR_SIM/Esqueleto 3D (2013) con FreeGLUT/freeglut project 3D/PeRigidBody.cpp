@@ -33,7 +33,7 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 
 	coefRoz = 0;
 	_vel = vec3Zero();
-	_vel.x = 0; _vel.y = -0.01; _vel.z = 0;
+	//_vel.x = 0; _vel.y = -0.01; _vel.z = 0;
 	_aceleracion = vec3Zero();
 	_force = vec3Zero();
 	_torque = vec3Zero();
@@ -42,7 +42,7 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 	_mass = mass;
 	_impulse = vec3Zero();
 
-	FG_ = vec3Multiply(G, _mass);
+	FG_ = vec3Zero();//vec3Multiply(G, _mass);
 
 }
 
@@ -54,7 +54,7 @@ PeRigidBody::~PeRigidBody()
 
 void PeRigidBody::update(float dT){
 
-	computeForces();
+	//computeForces();
 
 	_position = vec3Add(_position, vec3Multiply(_vel,dT));
 
@@ -72,7 +72,7 @@ void PeRigidBody::update(float dT){
 	_L = vec3Add(_L, vec3Multiply( _torque,dT));
 
 	/* v(t) = P(t)/M */
-	//_vel = vec3Divide(_P, _mass);
+	_vel = vec3Divide(_P, _mass);
 	_position = vec3Add(_position, _vel);
 	/* ω(t) = I−1(t)L(t) */
 	_omega = mat3x3MultiplyVector(_Iinv, _L);
@@ -83,7 +83,7 @@ void PeRigidBody::update(float dT){
 	mat3x3Transpose(RTrans, _R);
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);*/
-	
+
 
 	//ComputeForces y Torque
 

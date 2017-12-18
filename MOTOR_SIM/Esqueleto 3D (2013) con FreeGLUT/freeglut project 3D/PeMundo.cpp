@@ -5,11 +5,13 @@
 
 PeMundo::PeMundo()
 {
-	origen.x = 0; origen.y = 0; origen.z = 0;
+	origen.x = 0; origen.y = -0.0; origen.z = 0;
+	//origen2.x = 0; origen2.y = -0.2; origen2.z = 0;
 	
+
 	//explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 	solidosRigidos_.push_front(new PeCubo(2, origen, 10));
-	solidosRigidos_.push_front(new PeCubo(2, origen, 10));
+	solidosRigidos_.push_front(new PeCubo(2, origen2, 10));
 	colisions = new PeCollisionManager(solidosRigidos_);
 }
 
@@ -24,8 +26,8 @@ PeMundo::~PeMundo()
 
 
 void PeMundo::update(float dT){
-	if (solidosRigidos_.size() > 2) {
-		colisions->CollisionCheck();
+	if (solidosRigidos_.size() > 1) {
+		if (colisions->CollisionDetectEsfera(solidosRigidos_.back(), solidosRigidos_.front()))/* std::cout << "CHOQUE"*/;
 	}
 	for (auto w : solidosRigidos_){
 		
@@ -43,9 +45,9 @@ void PeMundo::update(float dT){
 void PeMundo::dibuja(){
 
 	for (auto w : solidosRigidos_){
-		if (!w->colision(solidosRigidos_.front()->getRB()) || w != solidosRigidos_.front()){
+		//if (!w->colision(solidosRigidos_.front()->getRB()) || w != solidosRigidos_.front()){
 			w->dibuja();
-		}
+		
 	}
 	
 	for (auto sP : sistemasParticulas_){
@@ -76,11 +78,11 @@ void PeMundo::input(unsigned char key){
 
 	switch (key) {
 	case 'w':
-		tempVec.x = 0; tempVec.y = 10; tempVec.z = 0;
-		origen.x = 0; origen.y = -0.02; origen.z = 0;
-		solidosRigidos_.push_front(new PeCubo(5, origen, 15));
+		tempVec.x = 0; tempVec.y = 0; tempVec.z = 0;
+		origen.x = 0; origen.y = -2; origen.z = 0;
+		solidosRigidos_.push_front(new PeCubo(5, origen, 10));
 
-		colisions->ChangeList(&solidosRigidos_);
+		//colisions->ChangeList(&solidosRigidos_);
 		/*solidosRigidos_.push_front(new PeCubo(2, origen, 1));
 		 a.x = 0; a.y = 200; a.z = -50;
 		fE.setDir(a);
@@ -111,7 +113,7 @@ void PeMundo::input(unsigned char key){
 		solidosRigidos_.front()->getRB()->applyForce(fE);
 		break;
 	case 't':
-		colisions->ImprimeDebug();
+		//colisions->ImprimeDebug();
 		break;
 	default:
 		

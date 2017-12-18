@@ -16,6 +16,10 @@ public:
 	std::list<PeSolidoRigido*> CollisionCheck();
 	void ChangeList(std::list<PeSolidoRigido*> * nueva);
 	bool CollisionDetect(PeSolidoRigido* col1, PeSolidoRigido* col2);
+	bool CollisionDetectCubo(PeSolidoRigido* col1, PeSolidoRigido* col2);
+	bool CollisionDetectEsfera(PeSolidoRigido* col1, PeSolidoRigido* col2);
+	void collisionReactionsOMG(PeSolidoRigido* col1, PeSolidoRigido* col2);
+
 
 	void ImprimeDebug() {
 		std::cout<< numCol;
