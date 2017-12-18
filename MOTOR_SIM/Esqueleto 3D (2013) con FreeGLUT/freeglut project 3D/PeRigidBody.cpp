@@ -29,6 +29,9 @@ PeRigidBody::PeRigidBody(vec3 origen, float mass)
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);
 
+	//mT
+	mat4x4Identity(_M);
+
 	coefRoz = 0;
 	_vel = vec3Zero();
 	_aceleracion = vec3Zero();
@@ -81,10 +84,15 @@ void PeRigidBody::update(float dT){
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);
 	
+	//Matrices.
+	mat4x4 T;
+	mat4x4Identity(T);
+	mat4x4Identity(_M);
+	T[0][3] = _position.x; T[1][3] = _position.y; T[2][3] = _position.z; 
+	mat4x4MultiplyMatrix(_M, T, getR4x4());
+	
 
-	//ComputeForces y Torque
-
-	//VIEJO_position = vec3Add(_position, vec3Add(vec3Multiply(_vel, dT), vec3Divide(vec3Multiply(_aceleracion, (dT * dT)), 2)));
+	
 	
 	//Reseteamos las fuerzas de impulso*/
 
@@ -129,10 +137,10 @@ void PeRigidBody::computeForces(){
 	_torque = vec3Zero();
 
 	//addForce(FG_);
-	vec3 t = vec3Zero();
-	t.x = 0.1;
+	//vec3 t = vec3Zero();
+	//t.x = 0.1;
 
-	addTorque(t);
+	//addTorque(t);
 	
 
 }

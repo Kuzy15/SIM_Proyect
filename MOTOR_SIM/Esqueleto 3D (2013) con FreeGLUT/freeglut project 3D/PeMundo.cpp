@@ -5,7 +5,7 @@
 
 PeMundo::PeMundo()
 {
-	origen.x = 0; origen.y = 0; origen.z = 0;
+	origen.x = 0; origen.y = -0.01; origen.z = 0;
 	
 	//explo = new PeSPFuego(origen, 5000, 8.0f, 0);
 }
@@ -75,7 +75,7 @@ void PeMundo::input(unsigned char key){
 		solidosRigidos_.front()->getRB()->applyForce(fE);
 		break;
 	case 'a': 
-		solidosRigidos_.push_front(new PeCubo(2, origen, 10));
+		solidosRigidos_.push_front(new PeCubo(2, origen, 1));
 		a.x = -100; a.y = 0; a.z = 0;
 		fE.setDir(a);
 		

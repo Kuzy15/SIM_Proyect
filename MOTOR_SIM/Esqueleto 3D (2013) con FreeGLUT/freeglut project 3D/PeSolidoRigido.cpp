@@ -15,17 +15,21 @@ PeSolidoRigido::~PeSolidoRigido()
 }
 
 void PeSolidoRigido::update(const float &dT){
-
+	//Actualizamos el estado
 	rb_->update(dT);
-	
-	
-	
+	//Actualizamos la matriz de OpenGl
+	for (size_t i = 0; i < 4; i++){
+		for (size_t j = 0; j < 4; j++){
+		ob_->getMatriz()->getM()[4 * i + j] = rb_->getMfin()[i][j];
+		}
+	}
+
 }
 
 void PeSolidoRigido::dibuja(){
 	
-	ob_->getMatriz()->traslada(rb_->getPos().x, rb_->getPos().y, rb_->getPos().z);
-	ob_->getMatriz()->rota(rb_->getR());
+	
+	
 	ob_->dibuja();
 	ob_->getMatriz()->reset();
 }
