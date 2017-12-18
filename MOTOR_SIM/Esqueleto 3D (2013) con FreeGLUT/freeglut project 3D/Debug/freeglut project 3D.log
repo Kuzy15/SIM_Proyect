@@ -1,13 +1,63 @@
-﻿  PeMundo.cpp
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: la conversión de 'double' en 'ccvType' requiere una conversión de restricción
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'inicializando': truncamiento de 'double' a 'ccvType'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(25): warning C4244: 'inicializando': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(62): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(66): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(67): warning C4305: '-=': truncamiento de 'double' a 'GLfloat'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(78): warning C4305: '=': truncamiento de 'double' a 'ccvType'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(94): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(102): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
-  freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb (Full PDB)
+﻿  VerticeNormal.cpp
+  PuntoVector3D.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\puntovector3d.cpp(42): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\puntovector3d.cpp(43): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\puntovector3d.cpp(44): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+  PeSPFuego.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  PeSPExplosion.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(26): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespexplosion.cpp(9): warning C4305: '=': truncation from 'double' to 'ccvType'
+  PeSolidoRigido.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+  PeSistemaParticulas.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+  PeRigidBody.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\perigidbody.cpp(36): warning C4305: '=': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\perigidbody.cpp(136): warning C4305: '=': truncation from 'double' to 'ccvType'
+  PeParticula.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\peparticula.cpp(11): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+  PeMundo.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(26): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(64): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(68): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(69): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(80): warning C4305: '=': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(96): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(104): warning C4305: 'argument': truncation from 'double' to 'float'
+  PeFuerza.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+  PeCubo.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+  PeCollisionManager.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(50): warning C4018: '<': signed/unsigned mismatch
+  ObjetosMalla.cpp
+  ObjetosCuadricos.cpp
+  ObjetoCuadrico.cpp
+  ObjetoCompuesto.cpp
+  Malla.cpp
+  main.cpp
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(50): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: conversion from 'double' to 'ccvType' requires a narrowing conversion
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing': truncation from 'double' to 'ccvType'
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(26): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+c:\hlocal\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\main.cpp(127): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Cara.cpp
+  Generating Code...
+  freeglut project 3D.vcxproj -> C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
+  freeglut project 3D.vcxproj -> C:\hlocal\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb (Partial PDB)

@@ -14,11 +14,15 @@ public:
 	~PeCollisionManager();
 
 	std::list<PeSolidoRigido*> CollisionCheck();
-	void ChangeList(std::list<PeSolidoRigido*> nueva);
+	void ChangeList(std::list<PeSolidoRigido*> * nueva);
 	bool CollisionDetect(PeSolidoRigido* col1, PeSolidoRigido* col2);
 
-private:
+	void ImprimeDebug() {
+		std::cout<< numCol;
+	}
 
+private:
+	int numCol = 0;
 	std::list<PeSolidoRigido*> solidosRigidos_;
 	std::list<PeSolidoRigido*> solidosColision_;
 };
