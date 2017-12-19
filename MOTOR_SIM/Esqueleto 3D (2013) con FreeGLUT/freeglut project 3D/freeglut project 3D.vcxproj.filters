@@ -69,6 +69,12 @@
     <ClCompile Include="PeCubo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PeCollisionManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PeEsfera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -132,6 +138,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PeCubo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeCollisionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PeEsfera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

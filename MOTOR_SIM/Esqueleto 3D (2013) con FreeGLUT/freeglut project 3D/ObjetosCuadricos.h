@@ -2,6 +2,7 @@
 #define OBJETOS_CUADRICOS_H
 
 #include "ObjetoCuadrico.h"
+#include "PeSolidoRigido.h"
 
 //Cilindro
 class Cilindro :
@@ -19,10 +20,10 @@ private:
 
 //Esfera
 class Esfera :
-	public ObjetoCuadrico{
+	public ObjetoCuadrico {
 public:
 
-	Esfera(GLfloat radio, int slices = 10, int stacks = 10): radio_(radio), slices_(slices), stacks_(stacks){};
+	Esfera(GLfloat radio, int slices = 10, int stacks = 10) : radio_(radio), slices_(slices), stacks_(stacks){};
 	virtual ~Esfera(){};
 	virtual void dibuja();
 

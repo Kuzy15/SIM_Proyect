@@ -4,10 +4,10 @@
 
 
 
-PeRigidBody::PeRigidBody(vec3 origen, float mass)
+PeRigidBody::PeRigidBody(float tam, vec3 origen, float mass)
 {
 
-	_tam = 0.5;
+	_tam = tam;
 
 	mat3x3Identity(_Ibody);
 	//Tensor de inercia. BUSCAR TAM
@@ -139,7 +139,7 @@ void PeRigidBody::computeForces(){
 	_force = vec3Zero();
 	_torque = vec3Zero();
 
-	addForce(FG_);
+	//addForce(FG_);
 	_torque = torqueAc;
 	_force = forceAc;
 

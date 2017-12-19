@@ -18,6 +18,7 @@ void Cilindro::dibuja(){
 //Metodos Esfera
 void Esfera::dibuja(){
 
+
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 

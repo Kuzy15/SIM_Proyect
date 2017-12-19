@@ -8,7 +8,7 @@
 class PeRigidBody
 {
 public:
-	PeRigidBody(vec3 origen, float mass);
+	PeRigidBody(float tam, vec3 origen, float mass);
 	virtual ~PeRigidBody();
 	void update(float dT);
 	void addForce(PeFuerza nF);
@@ -37,6 +37,14 @@ public:
 	}
 
 	inline const mat4x4 &getMfin() { return _M; }
+
+	inline const float getTam() { return _tam; };
+
+	inline const vec3 getVel(){ return _vel; };
+
+	inline const float getMass(){ return _mass; };
+
+	void setP(vec3 p){ _P = p; };
 
 	vec3 FG_;
 private:

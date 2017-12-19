@@ -4,6 +4,9 @@
 
 #include "PeSistemaParticulas.h"
 #include "PeSolidoRigido.h"
+#include "PeCubo.h"
+#include "PeEsfera.h"
+#include "PeCollisionManager.h"
 
 
 class PeMundo
@@ -18,6 +21,9 @@ private:
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
 	vec3 origen;
+	vec3 origen2;
+	vec3 origen3;
+
 	vec3 a;
 
 	GLfloat delta;
@@ -26,6 +32,12 @@ private:
 
 	PeFuerza fE;
 	/*aBodies;*/
+
+	PeEsfera* c = nullptr;
+	PeEsfera* c1 = nullptr;
+	PeEsfera* c2 = nullptr;
+
+	PeCollisionManager* colision = nullptr;
 
 public:
 	PeMundo();
