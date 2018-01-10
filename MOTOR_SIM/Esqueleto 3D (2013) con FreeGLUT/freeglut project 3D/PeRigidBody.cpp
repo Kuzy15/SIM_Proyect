@@ -35,6 +35,9 @@ PeRigidBody::PeRigidBody(float tam, vec3 origen, float mass)
 	//mT
 	mat4x4Identity(_M);
 
+	//quat
+	_Q = quatIdentity();
+
 	coefRoz = 0;
 	_vel = vec3Zero();
 	_aceleracion = vec3Zero();
@@ -66,13 +69,23 @@ void PeRigidBody::update(float dT){
 	_position = vec3Add(_position, vec3Multiply(_vel,dT));
 
 
-	/* Compute R˙(t) = ω(t)∗R(t) */
+	/* Compute R˙(t) = ω(t)∗R(t) 
 	mat3x3 RStar, Raux;
 	mat3x3Identity(RStar); mat3x3Identity(Raux);
 	mat3x3Star(RStar, _omega);
 	mat3x3MultiplyMatrix(Raux, RStar, _R);
 	mat3x3MultiplyScalar(Raux, dT);
-	mat3x3Add(_R, _R, Raux);
+	mat3x3Add(_R, _R, Raux);*/
+
+	quat qOmega,quatMul;
+	qOmega.w = 0; qOmega.x = _omega.x; qOmega.y = _omega.y; qOmega.z = _omega.z;
+	quatMul = quatMultiply(qOmega, _Q);
+	quatMul.w = quatMul.w * 0.5f * dT;
+	quatMul.x = quatMul.x * 0.5f * dT;
+	quatMul.y = quatMul.y * 0.5f * dT;
+	quatMul.z = quatMul.z * 0.5f * dT;
+	_Q = quatAdd(_Q, quatMul);
+	
 
 	/* d/dt P(t) = F(t) */
 	_P = vec3Add(_P, vec3Multiply(_force, dT));
@@ -84,6 +97,8 @@ void PeRigidBody::update(float dT){
 
 	/* ω(t) = I−1(t)L(t) */
 	_omega = mat3x3MultiplyVector(_Iinv, _L);
+	//Update R
+	quaternionToMatrix(normalize());
 
 	/* I−1(t) = R(t)*Ibody−1*R(t)T*/
 	mat3x3 RTrans, auxMul;
@@ -92,8 +107,8 @@ void PeRigidBody::update(float dT){
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);
 	
-	normalize();
-
+	
+	
 
 	//Matrices.
 	mat4x4 T, Raux2;

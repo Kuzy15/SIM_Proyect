@@ -43,10 +43,14 @@ bool PeCollisionManager::CollisionDetectCubo(PeSolidoRigido* col1, PeSolidoRigid
 	y2 = col2->getRB()->getPos().y - tam2 / 2;
 	z2 = col2->getRB()->getPos().z - tam2 / 2;
 
-	
-
-	return (x1 + tam1 >= x2 && x1 <= x2 && y1 + tam1 >= y2 && y1 <= y2 && z1 + tam1 >= z2 && z1 < z2);
-
+	if (abs(x1 - x2) <= tam1 / 2 + tam2 / 2) {
+		if (abs(y1 - y2) <= tam1 / 2 + tam2 / 2) {
+			if (abs(z1 - z2) <= tam1 / 2 + tam2 / 2) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 bool PeCollisionManager::CollisionDetectEsfera(PeSolidoRigido* col1, PeSolidoRigido* col2) {

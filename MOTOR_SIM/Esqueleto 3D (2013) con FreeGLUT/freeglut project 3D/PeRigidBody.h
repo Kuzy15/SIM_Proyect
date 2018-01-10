@@ -25,15 +25,33 @@ public:
 		
 	}
 
-	inline void normalize() {
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (_R[i][j] > 1.0f) _R[i][j] = 1.0f;
-				else if (_R[i][j] < -1.0f) _R[i][j] = -1.0f;
-			}
-		}
+	inline quat  normalize() {
+		vec4 vecAux;
+		vecAux.w = _Q.w; vecAux.x = _Q.x;
+		vecAux.y = _Q.y; vecAux.z = _Q.z;
+		float length = vec4Length(vecAux);
+		if (length <= 0)
+			return quatIdentity();
+		float oneOverLength = 1 / length;
+		vec4 vecNormalized = vec4Multiply(vecAux, oneOverLength);
+		quat quatNormalized;
+		quatNormalized.w = vecNormalized.w; quatNormalized.x = vecNormalized.x;
+		quatNormalized.y = vecNormalized.y; quatNormalized.z = vecNormalized.z;
+		return quatNormalized;
 	
-	
+	}
+
+	inline void quaternionToMatrix(const quat &q) {
+		_R[0][0] = 1 - (2 * pow(q.y, 2)) - (2 * pow(q.z, 2));
+		_R[0][1] = (2 * q.x *  q.y) + (2 * q.w * q.z);
+		_R[0][2] = (2 * q.x *  q.z) - (2 * q.w * q.y);
+		_R[1][0] = (2 * q.x *  q.y) - (2 * q.w * q.z);
+		_R[1][1] = 1 - (2 * pow(q.x, 2)) - (2 * pow(q.z, 2));
+		_R[1][2] = (2 * q.y *  q.z) + (2 * q.w * q.x);
+		_R[2][0] = (2 * q.x *  q.z) + (2 * q.w * q.y);
+		_R[2][1] = (2 * q.y *  q.z) - (2 * q.w * q.x);
+		_R[2][2] = 1 - (2 * pow(q.x, 2)) - (2 * pow(q.y, 2));
+		
 	}
 
 	inline const mat4x4 &getMfin() { return _M; }
@@ -54,13 +72,14 @@ private:
 	mat3x3 _Ibodyinv;
 	//Variables de estado
 	vec3 _position;
-	mat3x3 _R;
 	float r[16];//Aux
+	quat _Q;
 	vec3 _P;
 	vec3 _L;
 	mat4x4 _M;
 	//Variables derivadas (auxiliares)
 	mat3x3 _Iinv; 
+	mat3x3 _R;
 	vec3 _vel;
 	vec3 _omega;
 	//Variables computadas

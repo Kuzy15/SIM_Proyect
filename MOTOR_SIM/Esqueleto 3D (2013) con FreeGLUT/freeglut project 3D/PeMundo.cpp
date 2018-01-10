@@ -97,11 +97,11 @@ void PeMundo::input(unsigned char key){
 		a.x = 100; a.y = 0; a.z = 100;
 		fE.setDir(a);
 		
-		t.y = 50; t.x = 150;
+		t.y = 400; t.x = 500;
 
 		solidosRigidos_.front()->getRB()->addTorque(t);
 		
-		solidosRigidos_.front()->getRB()->addForce(fE);
+		//solidosRigidos_.front()->getRB()->addForce(fE);
 		solidosRigidos_.front()->getRB()->setRozamiento(true,0.2);
 		break;
 
