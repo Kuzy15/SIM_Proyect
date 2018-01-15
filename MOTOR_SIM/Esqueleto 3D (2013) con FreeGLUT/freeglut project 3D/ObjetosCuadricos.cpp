@@ -1,7 +1,7 @@
 #include "ObjetosCuadricos.h"
 
 //Metodos Cilindro
-void Cilindro::dibuja(){
+void Cilindro::dibuja() {
 
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
@@ -16,7 +16,7 @@ void Cilindro::dibuja(){
 
 
 //Metodos Esfera
-void Esfera::dibuja(){
+void Esfera::dibuja() {
 
 
 	glMatrixMode(GL_MODELVIEW);
@@ -30,7 +30,7 @@ void Esfera::dibuja(){
 
 
 //Metodos Disco
-void Disco::dibuja(){
+void Disco::dibuja() {
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 
@@ -43,22 +43,28 @@ void Disco::dibuja(){
 
 
 //Metodos DiscoParcial
-void DiscoParcial::dibuja(){
+void DiscoParcial::dibuja() {
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 
 	glMultMatrixf(mT->getM());
-	gluPartialDisk(obj, radioDentro_, radioFuera_, slices_, rings_,startAngle_,sweepAngle_);
+	gluPartialDisk(obj, radioDentro_, radioFuera_, slices_, rings_, startAngle_, sweepAngle_);
 
 	glPopMatrix();
 
 }
 
-void Cubo::dibuja(){
+void Cubo::dibuja() {
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 
 	glMultMatrixf(mT->getM());
+	glColor3f(r_, g_, b_);
+	if (t_ == 'm') {
+		glRotatef(x, 0, 1, 0);
+		glScalef(5, 1, 1);
+	}
+
 	glutSolidCube(size_);
 	glPopMatrix();
 

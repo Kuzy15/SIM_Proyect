@@ -4,9 +4,14 @@
 class PeCubo :
 	public PeSolidoRigido
 {
+
 public:
-	PeCubo(float tam, vec3 pos, float masa, color3f c = { 0.5, 0.5, 0.5, 1 });
+	enum tipo { normal, madera };
+	PeCubo(float tam, vec3 pos, float masa, PeCubo::tipo t);
 
 	virtual ~PeCubo();
+
+	tipo _t;
+	GLfloat r, g, b;
 };
 

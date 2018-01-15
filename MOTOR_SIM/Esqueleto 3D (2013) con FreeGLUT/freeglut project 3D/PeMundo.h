@@ -33,10 +33,14 @@ private:
 	PeFuerza fE;
 	/*aBodies;*/
 
-	PeEsfera* c = nullptr;
-	PeEsfera* c1 = nullptr;
-	PeEsfera* c2 = nullptr;
+	PeCubo* c = nullptr;
+	PeCubo* c1 = nullptr;
+	PeCubo* c2 = nullptr;
 
+	PeEsfera* e = nullptr;
+	PeEsfera* e1 = nullptr;
+
+	bool explotao = false;
 	PeCollisionManager* colision = nullptr;
 
 public:
@@ -62,7 +66,8 @@ public:
 
 	void step();
 
-	
+
+	void HumoEnColision(PeSolidoRigido * c, PeSolidoRigido * c1);
 
 };
 

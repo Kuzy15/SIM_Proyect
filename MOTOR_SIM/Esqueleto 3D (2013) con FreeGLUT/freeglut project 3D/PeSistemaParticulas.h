@@ -24,6 +24,7 @@ protected:
 
 	float Kvd_;
 
+
 public:
 	GLfloat dameRandom(GLfloat max, GLfloat min) {
 		return min + static_cast <GLfloat> (rand()) / (static_cast <GLfloat> (RAND_MAX / (max - min)));
@@ -38,16 +39,17 @@ public:
 		v.x = x;
 		v.y = y;
 		v.z = z;
-		v = vec3Multiply(v,magnitud);
+		v = vec3Multiply(v, magnitud);
 		return v;
 	}
-	PeSistemaParticulas(vec3 origen, int maxParticulas, float vida, /*float varVida, flaot varTam*/float kvd);
+	PeSistemaParticulas(vec3 origen, int maxParticulas, float vida, /*float varVida, flaot varTam*/float kvd
+	);
 
 	virtual ~PeSistemaParticulas();
 
-	inline list<PeParticula*> getParticulas(){ return particulas_; };
+	inline list<PeParticula*> getParticulas() { return particulas_; };
 
-	inline float getNumParticulas(){ return particulas_.size(); }
+	inline float getNumParticulas() { return particulas_.size(); }
 
 	void const addParticula(PeParticula*);
 
