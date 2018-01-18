@@ -20,7 +20,7 @@ PeMundo::PeMundo()
 
 
 	// descomentar para poner fuego guapisimo
-	origen.x = 0; origen.y = 2; origen.z = 0;
+	origen.x = -6; origen.y = 2.5; origen.z = 0;
 	origen2.x = 15; origen2.y = 0; origen2.z = 15;
 
 	/*explo = new PeSPFuego(origen2, 5, 8.0f, 0, 'f'); // f -> fuego, h -> humo
@@ -33,10 +33,20 @@ PeMundo::PeMundo()
 	explotao = false;
 	humillo = false;*/
 
+	c = new PeCubo(2, origen, 2, PeCubo::normal);
+	origen.x = 3; origen.y = 2;
+	c1 = new PeCubo(2, origen, 1, PeCubo::normal);
+	origen.x += 5;
+	c2 = new PeCubo(4, origen, 3, PeCubo::normal);
+
 	
 
+	solidosRigidos_.emplace_back(c);
+	solidosRigidos_.emplace_back(c1);
+	solidosRigidos_.emplace_back(c2);
 
-	//colision = new PeCollisionManager(solidosRigidos_);
+
+	colision = new PeCollisionManager(solidosRigidos_);
 }
 
 
@@ -72,18 +82,31 @@ void PeMundo::HumoEnColision(PeSolidoRigido * c, PeSolidoRigido * c1) {
 }
 void PeMundo::update(float dT){
 
+	vec3 t = vec3Zero();
 
 	if (solidosRigidos_.size() > 1) {
 
-		if (e != nullptr && e1 != nullptr){
-			if (colision->CollisionDetectEsfera(e, e1)) {
-				HumoEnColision(e, e1);
-				colision->collisionReactionsOMG(e, e1);
-			}
-			/*if (colision->CollisionDetectCubo(c, c1)){
-			colision->collisionReactionsOMG(c, c1);
+		if (c != nullptr && c1 != nullptr && c2 != nullptr){
+		/*	if (colision->CollisionDetectEsfera(c, c1)) {
+				HumoEnColision(c, c1);
+				colision->collisionReactionsOMG(c, c1);
 			}*/
+			if (colision->CollisionDetectCubo(c, c1)){
+				colision->collisionReactionsOMG(c, c1);
+				
+
+				
+				
+				
+			}
+			if (colision->CollisionDetectCubo(c1, c2)){
+				colision->collisionReactionsOMG(c1, c2);
+				t.y = 20; t.x = 0;
+				c2->getRB()->addTorque(t);
+			}
 		}
+
+	
 	}
 	for (auto w : solidosRigidos_){
 
@@ -136,7 +159,7 @@ void PeMundo::input(unsigned char key){
 	/*case 'r':
 		explotao = true;
 	break;*/
-	case 'w':
+	/*case 'w':
 		solidosRigidos_.push_front(new PeCubo(2, origen, 1, PeCubo::normal));
 		a.x = 0; a.y = 1000; a.z = 400;
 		fE.setDir(a);
@@ -167,11 +190,11 @@ void PeMundo::input(unsigned char key){
 		solidosRigidos_.front()->getRB()->addTorque(t);
 		fE.setDir(a);
 		solidosRigidos_.front()->getRB()->addForce(fE);
-		break;
-	/*case 'i':
-		a.x = 1000; a.y = 0; a.z = 0;
-		e->getRB()->addForce(a);
 		break;*/
+	case 'i':
+		a.x = 1000; a.y = 0; a.z = 0;
+		c->getRB()->addForce(a);
+		break;
 
 	default:
 		break;

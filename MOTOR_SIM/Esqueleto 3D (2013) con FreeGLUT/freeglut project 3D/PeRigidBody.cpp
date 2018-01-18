@@ -50,7 +50,8 @@ PeRigidBody::PeRigidBody(float tam, vec3 origen, float mass)
 	forceAc = vec3Zero();
 	_impulse = vec3Zero();
 
-	FG_ = vec3Multiply(G, _mass);
+	vec3 asd = { 0.0f, 0.0f, 0.0f };
+	FG_ = vec3Multiply(asd, _mass);
 
 	
 

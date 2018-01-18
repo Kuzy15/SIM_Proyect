@@ -45,6 +45,8 @@ private:
 	bool humillo = false;
 	PeCollisionManager* colision = nullptr;
 
+	bool b = false;
+
 public:
 	PeMundo();
 	~PeMundo();

@@ -1,16 +1,15 @@
-﻿Compilación iniciada a las 18/01/2018 17:58:35.
-     1>Proyecto "C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 18/01/2018 20:22:42.
+     1>Project "D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeMundo.cpp
-         PeMundo.cpp
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'inicializando' : truncamiento de 'double' a 'ccvType'
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(52): warning C4244: 'return' : conversión de 'unsigned int' a 'float'; posible pérdida de datos
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(31): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(122): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(126): warning C4305: 'argumento' : truncamiento de 'double' a 'float'
-     1>c:\users\carlo\desktop\sim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(127): warning C4305: '-=' : truncamiento de 'double' a 'GLfloat'
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PeCollisionManager.cpp
+         PeCollisionManager.cpp
+     1>d:\universidad\2017-2018\sim\proyectosim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'initializing' : truncation from 'double' to 'ccvType'
+     1>d:\universidad\2017-2018\sim\proyectosim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(89): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>d:\universidad\2017-2018\sim\proyectosim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(90): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\universidad\2017-2018\sim\proyectosim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(141): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\universidad\2017-2018\sim\proyectosim\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pecollisionmanager.cpp(145): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
          Debug\main.obj
          Debug\Malla.obj
          Debug\ObjetoCompuesto.obj
@@ -30,10 +29,9 @@
          Debug\PeSPFuego.obj
          Debug\PuntoVector3D.obj
          Debug\VerticeNormal.obj
-         LINK : no se encontró C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-         freeglut project 3D.vcxproj -> C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\carlo\Desktop\SIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
+     1>Done Building Project "D:\UNIVERSIDAD\2017-2018\SIM\ProyectoSIM\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:01.22
+Time Elapsed 00:00:00.99

@@ -109,8 +109,17 @@ void PeCollisionManager::collisionReactionsOMG(PeSolidoRigido* col1, PeSolidoRig
 	vec3 mL2 = vec3Multiply(v2, col2->getRB()->getMass());
 	vec3 mL1 = vec3Multiply(v1, col1->getRB()->getMass());
 
+	
+
 	col2->getRB()->setP(mL2);
 	col1->getRB()->setP(mL1);
+
+	vec3 t = { 0, 2, 10 };
+	t.y = 2; t.z = 10;
+	col2->getRB()->addTorque(t);
+
+	t.y = 2; t.z = -8;
+	col1->getRB()->addTorque(t);
 }
 
 
