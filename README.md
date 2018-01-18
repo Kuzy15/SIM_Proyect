@@ -16,3 +16,7 @@ Solidos Rígidos:
 	Pulsando la tecla s, creamos un cubo con una fuerza hacia el eje y, viendo el resultado de la fuerza de la gravedad.
   
 	Pulsando la tecla d, creamos un cubo con una fuerza en el eje "y" y en el eje "z" además, le aplicamos un torque como en el ejemplo anterior.
+	
+Colisión Cubos:
+
+	Pulsando la tecla i se añade un impulso a un cubo que rebota con otro.
