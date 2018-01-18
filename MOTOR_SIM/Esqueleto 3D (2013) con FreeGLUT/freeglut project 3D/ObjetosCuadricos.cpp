@@ -23,6 +23,7 @@ void Esfera::dibuja() {
 	glPushMatrix();
 
 	glMultMatrixf(mT->getM());
+	glColor3f(0.2,0.2,0.2);
 	gluSphere(obj, radio_, slices_, stacks_);
 
 	glPopMatrix();

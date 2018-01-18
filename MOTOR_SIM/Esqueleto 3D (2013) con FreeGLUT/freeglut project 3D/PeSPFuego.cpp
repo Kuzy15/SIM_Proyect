@@ -61,8 +61,9 @@ void PeSPFuego::update(GLfloat deltaTime) {
 
 
 		}
-
-		PeParticula* p = new PeParticula(0.1f, 1.0f, 5.0f, origen_, c, v, g, _t);
+		PeParticula* p;
+		if (_t == 'f') 	 p = new PeParticula(0.1f, 1.0f, 5.0f, origen_, c, v, g, _t);
+		else p = new PeParticula(0.03f, 1.0f, 5.0f, origen_, c, v, g, _t);
 		particulas_.push_back(p);
 	}
 

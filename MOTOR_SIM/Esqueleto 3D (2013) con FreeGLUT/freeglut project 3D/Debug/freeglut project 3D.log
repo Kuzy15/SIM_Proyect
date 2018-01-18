@@ -1,12 +1,11 @@
-﻿  PeMundo.cpp
+﻿  PeSPFuego.cpp
 c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4838: la conversión de 'double' en 'ccvType' requiere una conversión de restricción
 c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pefuerza.h(6): warning C4305: 'inicializando': truncamiento de 'double' a 'ccvType'
 c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pesistemaparticulas.h(52): warning C4244: 'return': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.h(30): warning C4244: 'inicializando': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(107): warning C4244: '=': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(111): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(112): warning C4305: '-=': truncamiento de 'double' a 'GLfloat'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(138): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pemundo.cpp(145): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(13): warning C4305: '=': truncamiento de 'double' a 'ccvType'
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(17): warning C4305: '=': truncamiento de 'double' a 'GLfloat'
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(18): warning C4305: '=': truncamiento de 'double' a 'ccvType'
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(43): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\sim_proyect\motor_sim\esqueleto 3d (2013) con freeglut\freeglut project 3d\pespfuego.cpp(48): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.exe
   freeglut project 3D.vcxproj -> C:\Users\Alejandro\Desktop\SIM_Proyect\MOTOR_SIM\Esqueleto 3D (2013) con FreeGLUT\Debug\freeglut project 3D.pdb (Full PDB)

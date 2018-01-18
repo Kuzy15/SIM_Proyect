@@ -20,6 +20,7 @@ private:
 	double lastFrame = 0;
 	GLfloat frec = 10;
 	PeSistemaParticulas* explo;
+	PeSistemaParticulas* humo;
 	vec3 origen;
 	vec3 origen2;
 	vec3 origen3;
@@ -41,6 +42,7 @@ private:
 	PeEsfera* e1 = nullptr;
 
 	bool explotao = false;
+	bool humillo = false;
 	PeCollisionManager* colision = nullptr;
 
 public:

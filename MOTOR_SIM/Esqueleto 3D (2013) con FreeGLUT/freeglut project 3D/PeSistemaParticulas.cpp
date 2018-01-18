@@ -21,6 +21,7 @@ void const PeSistemaParticulas::addParticula(PeParticula* nPeParticula) {
 void PeSistemaParticulas::dibuja() {
 
 	for (PeParticula* w : particulas_) {
+
 		w->dibuja();
 	}
 }
