@@ -68,7 +68,6 @@ void PeRigidBody::update(float dT){
 
 	_position = vec3Add(_position, vec3Multiply(_vel,dT));
 
-
 	/* Compute R˙(t) = ω(t)∗R(t) 
 	mat3x3 RStar, Raux;
 	mat3x3Identity(RStar); mat3x3Identity(Raux);
@@ -86,7 +85,6 @@ void PeRigidBody::update(float dT){
 	quatMul.z = quatMul.z * 0.5f * dT;
 	_Q = quatAdd(_Q, quatMul);
 	
-
 	/* d/dt P(t) = F(t) */
 	_P = vec3Add(_P, vec3Multiply(_force, dT));
 	/* d/dt L(t) = τ(t) */
@@ -106,9 +104,6 @@ void PeRigidBody::update(float dT){
 	mat3x3Transpose(RTrans, _R);
 	mat3x3MultiplyMatrix(auxMul, _R, _Ibodyinv);
 	mat3x3MultiplyMatrix(_Iinv, auxMul, RTrans);
-	
-	
-	
 
 	//Matrices.
 	mat4x4 T, Raux2;
@@ -154,7 +149,7 @@ void PeRigidBody::computeForces(){
 	_force = vec3Zero();
 	_torque = vec3Zero();
 
-	//addForce(FG_);
+	addForce(FG_);
 	_torque = torqueAc;
 	_force = forceAc;
 

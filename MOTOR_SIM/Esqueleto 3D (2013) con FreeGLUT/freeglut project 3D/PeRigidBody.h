@@ -62,7 +62,14 @@ public:
 
 	inline const float getMass(){ return _mass; };
 
+	void setPos(vec3 p){ 
+		_position = p; };
 	void setP(vec3 p){ _P = p; };
+
+	void resetTorque(){ _torque = vec3Zero();}
+	void resetForce(){ 
+		_force = vec3Zero(); }
+	void resetVel(){ _vel = vec3Zero(); }
 
 	vec3 FG_;
 private:

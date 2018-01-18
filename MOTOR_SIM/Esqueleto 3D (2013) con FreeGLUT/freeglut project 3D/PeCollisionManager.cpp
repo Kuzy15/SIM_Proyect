@@ -90,9 +90,8 @@ void PeCollisionManager::collisionReactionsOMG(PeSolidoRigido* col1, PeSolidoRig
 	float degrees2Radian = degrees2 * 3.141592654 / 180;
 	float sinD2 = std::sin(degrees2Radian);
 	float cosD2 = std::cos(degrees2Radian);
-
-
-
+	
+	//Provisional
 	vec3 v2 = col1->getRB()->getVel();
 	v2 = vec3Divide(v2, 1.5);
 
@@ -112,8 +111,6 @@ void PeCollisionManager::collisionReactionsOMG(PeSolidoRigido* col1, PeSolidoRig
 
 	col2->getRB()->setP(mL2);
 	col1->getRB()->setP(mL1);
-
-
 }
 
 

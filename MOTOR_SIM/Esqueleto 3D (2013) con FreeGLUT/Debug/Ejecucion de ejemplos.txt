@@ -1,0 +1,4 @@
+Ejemplo esferas y colision:
+	Pulsando la tecla i le damos potencia a una de las esferas y hacemos que colisione con la otra.
+Fuego:
+	Pulsando la tecla r activamos la hoguera.
