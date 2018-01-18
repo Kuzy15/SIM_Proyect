@@ -1,4 +1,7 @@
-# SIM_Proyect
+﻿# SIM_Proyect
+
+Presentación final: https://prezi.com/view/XTxQqB4ACNeSY0WbrAvg/
+
 Ejemplo esferas y colision:
 
 	Pulsando la tecla i le damos potencia a una de las esferas y hacemos que colisione con la otra.
